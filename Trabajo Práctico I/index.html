@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,7 +9,108 @@
     <!-- favicon -->
     <link rel="icon" type="image/x-icon" href="img/favicon.ico" />
 </head>
+
 <body>
+    <!-- HEADER -->
+    <header>
+        <a href="#hero">
+            <img src="img/logo.png" alt="Logo de agencia" />
+        </a>
+        <nav>
+            <ul>
+                <li>
+                    <a href="#servicios">
+                        Servicios
+                    </a>
+                </li>
+                <li>
+                    <a href="#galeria">
+                        Galería
+                    </a>
+                </li>
+                <li>
+                    <a href="#contacto">
+                        Contacto
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <!-- HERO SECTION  -->
     <h1>Bienvenidos a TechNova Solutions</h1>
+    <!-- SERVICIOS -->
+    <!-- GALERÍA -->
+
+    <!-- CONTACTO  -->
+    <!-- DIALOG PARA EL SUBMIT DEL FORMULARIO -->
+    <dialog id="alert-dialog">
+        <form>
+            <button formmethod="dialog">X</button>
+        </form>
+        <h3>Gracias por contactarte</h3>
+        <p>Nuestro equipo está revisando tu solicitud</p>
+    </dialog>
+
+    <button id="show-button">Mostrar diálogo</button>
+
+    <!-- FOOTER -->
+    <footer>
+        <ul>
+            <li>
+                <a href="mailto:agencia@agencia.com">
+                    Email
+                </a>
+            </li>
+            <li>
+                <a href="tel:+54 11 5555 5555">
+                    Teléfono
+                </a>
+            </li>
+            <li>
+                <a href="https://maps.app.goo.gl/7THu4XcsCN3aJfNr8" target="_blank">
+                    Dirección: Calle Falsa 1234
+                </a>
+            </li>
+        </ul>
+        <ul>
+            <li>
+                <a href="#hero">
+                    <img src="img/logo.png" alt="Logo de TechNova" />
+                </a>
+            </li>
+            <li>
+                <a href="https://www.instagram.com/" target="_blank">
+                    <img src="img/instagram.png" alt="Logo de Instagram" />
+                </a>
+            </li>
+            <li>
+                <a href="https://www.linkedin.com/" target="_blank">
+                    <img src="img/linkedin.png" alt="Logo de LinkedIn" />
+                </a>
+            </li>
+            <li>
+                <a href="https://www.github.com/" target="_blank">
+                    <img src="img/github.png" alt="Logo de Github" />
+                </a>
+            </li>
+        </ul>
+        <ul>
+            <li>
+                Copyright © 2025 TechNova Solutions. Todos los derechos reservados.
+            </li>
+            <li>
+                Desarrollado por <a href="https://www.technovasolutions.com" target="_blank">TechNova Solutions</a>
+            </li>
+        </ul>
+    </footer>
+
+    <script>
+        const showButton = document.querySelector("#show-button");
+        showButton.addEventListener("click", function () {
+            const alertDialog = document.querySelector("#alert-dialog");
+            alertDialog.showModal();
+        });
+    </script>
 </body>
+
 </html>
