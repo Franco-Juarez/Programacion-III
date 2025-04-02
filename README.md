@@ -37,7 +37,7 @@ El objetivo del trabajo es desarrollar un sitio web estructurado y responsive pa
 |----------------------|--------------|  
 | Franco Juárez        | Desarrollo   |  
 | Lucía Canclini       | Desarrollo   |  
-| Santiago Castellaro  | Desarrollo   |  
+| Rodrigo Álvarez      | Desarrollo   |  
 | Juan Baranovsky      | Desarrollo   |  
 
 ---
