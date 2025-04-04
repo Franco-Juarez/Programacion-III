@@ -1,9 +1,9 @@
 #servicios {
     margin: 0;
-    padding: 0;
+    padding: 0 6.5rem;
     box-sizing: border-box;
     background-color: rgb(136, 145, 145);
-    width: 80%;
+    width: 80rem;
     margin: 0 auto;
 }
 
@@ -11,6 +11,9 @@
     background-color: aliceblue;
     padding: 20px;
     border-radius: 20px;
+    margin: 0 10px;
+    flex: 0 0 auto;
+    width: 300px;
 }
 
 .card {
@@ -38,8 +41,6 @@
         margin-right: 5px;
     }
 }
-
-
 
 .card-bottom {
     display: flex;
@@ -81,11 +82,12 @@
 }
 
 .servicios-ul {
-    list-style-type: none;
     display: flex;
-    gap: 50px;
-    overflow: hidden;
-    margin: 0 auto;
+    list-style: none;
+    padding: 0;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
 }
 
 .servicios-botones-carrusel {
@@ -106,6 +108,10 @@
         transition: background-color 0.3s ease;
         &:hover {
             background-color: rgb(31, 30, 30);
+        }
+        &:disabled {
+            background-color: rgb(136, 145, 145);
+            cursor: not-allowed;
         }
     }
 }

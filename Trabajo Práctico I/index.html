@@ -42,8 +42,8 @@
     <!-- SERVICIOS -->
      <section id="servicios">
         <h2 class="servicios-titulo">Nuestros servicios</h2>
-        <ul class="servicios-ul">
-            <li>
+        <ul class="servicios-ul" id="servicios-ul">
+            <li class="card-exterior-li">
                 <div class="card-exterior">
                     <img class="card" src="./img/london.jpg" alt="Imagen de Londres">
                     <h3 class="card-titulo">Puente de Westminster</h3>
@@ -59,7 +59,7 @@
                 </div>
             </li>
             
-            <li>
+            <li class="card-exterior-li">
                 <div class="card-exterior">
                     <img class="card" src="./img/china.jpg" alt="Imagen de China">
                     <h3 class="card-titulo">Gran Muralla</h3>
@@ -74,7 +74,7 @@
                     </div>
                 </div>
             </li>
-            <li>
+            <li class="card-exterior-li">
                 <div class="card-exterior">
                     <img class="card" src="./img/mallorca.jpg" alt="Imagen de Santanyi">
                     <h3 class="card-titulo">Playa de Santanyí</h3>
@@ -89,7 +89,7 @@
                     </div>
                 </div>
             </li>
-            <li>
+            <li class="card-exterior-li">
                 <div class="card-exterior">
                     <img class="card" src="./img/peru.jpg" alt="Imagen de Machu Picchu">
                     <h3 class="card-titulo">Ruinas de Machu Picchu</h3>
@@ -104,13 +104,13 @@
                     </div>
                 </div>
             </li>
-            <li>
+            <li class="card-exterior-li">
                 <div class="card-exterior">
                     <img class="card" src="./img/suiza-zermatt.avif" alt="Imagen de Zermatt">
                     <h3 class="card-titulo">Poblado de Zermatt</h3>
                     <div class="card-ubicacion">
                         <img src="./img/destino.png" alt="Icono de destino">
-                        <p >>ermatt, Suiza</p>
+                        <p> Zermatt, Suiza</p>
 
                     </div>
                     <div class="card-bottom">
@@ -119,7 +119,7 @@
                     </div>
                 </div>
             </li>
-            <li>
+            <li class="card-exterior-li">
                 <div class="card-exterior">
                     <img class="card" src="./img/venecia.jpg" alt="Imagen de Venecia">
                     <h3 class="card-titulo">Ciudad de Venecia</h3>
@@ -134,25 +134,11 @@
                     </div>
                 </div>
             </li>
-            <li>
-                <div class="card-exterior">
-                    <img class="card" src="./img/london.jpg" alt="Imagen de Londres">
-                    <h3 class="card-titulo">Puente de Westminster</h3>
-                    <div class="card-ubicacion">
-                        <img src="./img/destino.png" alt="Icono de destino">
-                        <p >Londres, UK</p>
-
-                    </div>
-                    <div class="card-bottom">
-                        <p>$200<span>/day</span></p>
-                        <button>Mas información</button>
-                    </div>
-                </div>
-            </li>
+            
         </ul>
         <div class="servicios-botones-carrusel">
-            <button> < </button>
-            <button> > </button>
+            <button id="botonAnterior"> < </button>
+            <button id="sigBtn"> > </button>
         </div>
      </section>
     <!-- GALERÍA -->
@@ -220,13 +206,7 @@
         </ul>
     </footer>
 
-    <script>
-        const showButton = document.querySelector("#show-button");
-        showButton.addEventListener("click", function () {
-            const alertDialog = document.querySelector("#alert-dialog");
-            alertDialog.showModal();
-        });
-    </script>
+    <script src="js/scripts.js"></script>
 </body>
 
 </html>
