@@ -8,6 +8,7 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 
+// Carrusel
 const carrusel = document.querySelector("#servicios-ul");
 const antBtn = document.querySelector("#botonAnterior");
 const sigBtn = document.querySelector("#sigBtn");
@@ -50,3 +51,10 @@ sigBtn.addEventListener("click", function() {
     });
 });
 
+// Modal!!
+const mostrarModal = document.querySelector("#mostrar-modal");
+mostrarModal.addEventListener("click", function() {
+    
+    const modalCard = document.querySelector("#modal-card");
+    modalCard.showModal();
+})

@@ -14,6 +14,7 @@
     margin: 0 10px;
     flex: 0 0 auto;
     width: 300px;
+    
 }
 
 .card {
@@ -21,6 +22,7 @@
     width: 300px;
     border-radius: 20px;
     object-fit: cover;
+
 }
 
 .card-titulo {
@@ -116,3 +118,46 @@
     }
 }
 
+#modal-card {
+    width: 500px;
+    border-radius: 20px;
+    padding: 20px;
+    form {
+        display: flex;
+        justify-content: end;
+        margin-bottom: 10px;
+        button {
+            border-radius: 100%;
+            background-color: black;
+            border: 1px solid black;
+            color: white;
+            padding: 10px;
+            display: flex;
+            justify-content: center;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            &:hover {
+                background-color: rgb(31, 30, 30);
+            }
+        }
+    }
+}
+
+#modal-card > img {
+    height: 200px;
+    width: 400px;
+    margin: 0 auto;
+    border-radius: 20px;
+    display: flex;
+    object-fit: cover;
+    border: 2px solid black;
+}
+
+
+
+#modal-card p {
+    border-top: 1px solid #333;
+    padding-top: 10px;
+    font-size: 20px;
+    
+}
