@@ -1,5 +1,13 @@
 /* ESTILOS GLOBALES + NAVBAR + FOOTER */
 
+
+body{
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    min-height: 100dvh;
+    margin: 0;
+}
+
 .header {
     display: flex;
     justify-content: space-between;
@@ -35,8 +43,9 @@
     display: flex;
     justify-content: space-between;
     border-top: 1px solid #ddd;
-    position: absolute;
-    bottom: 0vh;
+    background-color: #ddd;
+    
+    z-index: 99999;
     width: 99%;
     padding: 0;
     margin: 0;
