@@ -1,21 +1,130 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
 /* ESTILOS GLOBALES + NAVBAR + FOOTER */
 
+/*CSS VARIABLES*/
 
-body{
+:root {
+
+    /*COLORES*/
+    --color-primario: #274C77;
+    --color-secundario: #6096BA;
+    --color-terciario: #A3CEF1;
+    --color-background: #8B8C89;
+    --color-texto: #151514;
+    --color-blanco: #E7ECEF;
+    --background-blanco: #FAFAFA;
+
+    /* FUENTES */
+    --fuente-primaria: "Bebas Neue", sans-serif;
+    --fuente-secundaria: "Open Sans", sans-serif;
+    --font-h1: 5rem;
+    --font-h2: 4rem;
+    --font-h3: 3rem;
+    --font-h4: 2rem;
+    --font-h5: 1.5rem;
+    --font-h6: 1.2rem;
+    --font-p: 1rem;
+    --font-p-small: 0.8rem;
+
+    /*BOX SHADOWS*/
+    --box-shadow-sm: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+    --box-shadow-md: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+    --box-shadow-lg: box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px, rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
+
+    /*ESPACIADOS*/
+    --espaciado-xs: 0.2rem;
+    --espaciado-sm: 0.5rem;
+    --espaciado-md: 1rem;
+    --espaciado-lg: 1.5rem;
+    --espaciado-xl: 2rem;
+    --espaciado-2xl: 3rem;
+    --espaciado-3xl: 4rem;
+
+    /*BORDES*/
+    --border-radius-sm: 0.2rem;
+    --border-radius-md: 0.5rem;
+    --border-radius-lg: 1rem;
+    --border-radius-xl: 1.5rem;
+
+    /*CONTAINERS*/
+    --ancho-container: 80%;
+    --ancho-maximo: 1500px;
+
+    /*MARGENES*/
+    --centrado: 0 auto;
+
+}
+
+
+/*CSS RESET*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
     display: grid;
     grid-template-rows: auto 1fr auto;
     min-height: 100dvh;
     margin: 0;
+    background-color: var(--background-blanco);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: var(--fuente-primaria);
+    color: var(--color-texto);
+    padding: var(--espaciado-md);
+    text-align: center;
+    letter-spacing: 2px;
+}
+
+p,
+span,
+li,
+a {
+    font-family: var(--fuente-secundaria);
+    color: var(--color-texto);
+    font-size: var(--font-p);
 }
 
 .header {
-    display: flex;
-    justify-content: space-between;
-    border-bottom: 1px solid #ddd;
+    box-shadow: var(--box-shadow-sm);
+    padding: var(--espaciado-md) var(--espaciado-lg);
+    position: sticky;
+    top: 0;
+    z-index: 999;
+    background-color: var(--background-blanco);
+
+    .header-container {
+        max-width: var(--ancho-container);
+        margin: var(--centrado);
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+    }
+
     img {
-        padding-left: 20px;
         height: 80px;
-    };
+    }
+
+    nav {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+    }
 }
 
 .nav-ul {
@@ -26,7 +135,6 @@ body{
     font-size: 1.5rem;
     font-weight: bold;
     letter-spacing: 2px;
-    padding-right: 20px;
 }
 
 .nav-ul a {
@@ -34,21 +142,28 @@ body{
     color: black;
     transition: all .2s linear;
 }
+
 .nav-ul a:hover {
-    border-bottom: 1px solid blue;
-    color: blue;
+    border-bottom: 1px solid var(--color-primario);
+    color: var(--color-primario);
 }
 
 .footer {
-    display: flex;
-    justify-content: space-between;
-    border-top: 1px solid #ddd;
-    background-color: #ddd;
-    
-    z-index: 99999;
-    width: 99%;
+    background-color: var(--color-terciario);
+    width: 100%;
     padding: 0;
     margin: 0;
+    padding: var(--espaciado-md) var(--espaciado-lg);
+
+}
+
+.footer-container {
+    max-width: var(--ancho-container);
+    margin: var(--centrado);
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
 }
 
 .footer-ul-links {
@@ -58,7 +173,7 @@ body{
     gap: 1rem;
 }
 
-.footer-ul-links li a{
+.footer-ul-links li a {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -67,36 +182,37 @@ body{
     font-weight: 500;
 }
 
-.footer-ul-links li a:hover  {
+.footer-ul-links li a:hover {
     scale: 1.05;
     transition: all 0.2s ease;
     color: blue;
 }
+
 .footer-ul-links svg {
     width: 50px;
     height: 50px;
 }
 
-.footer-ul-contacto li{
+.footer-ul-contacto li {
     list-style: none;
     display: flex;
     justify-content: end;
     font-size: 20px;
-    padding-right: 20px;
     padding-top: 10px;
-    
+
     a {
         text-decoration: none;
         color: black;
         cursor: pointer;
 
     }
+
     a:hover {
         text-decoration: underline;
         text-decoration-thickness: 5%;
         color: #333
     }
-    
+
 }
 
 .footer-ul-contacto li:first-child {
@@ -108,11 +224,19 @@ body{
     display: flex;
     flex-direction: column;
     align-items: center;
+
     img {
         height: 50px;
     }
+
     img:hover {
         scale: 1.1;
         transition: all .4s ease;
     }
+}
+
+.fa-brands {
+    color: var(--color-texto);
+    font-size: 2rem;
+    transition: all .2s linear;
 }
