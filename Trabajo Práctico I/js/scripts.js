@@ -19,7 +19,7 @@ let posicion = 0;
 antBtn.disabled = true;
 
 antBtn.addEventListener("click", function() {
-    posicion -= anchoCard;
+    posicion -= (anchoCard + 40);
     console.log(posicion)
     if (posicion <= 8) {
         posicion = 0;
@@ -34,14 +34,14 @@ antBtn.addEventListener("click", function() {
 });
 
 sigBtn.addEventListener("click", function() {
-    posicion += anchoCard;
+    posicion += (anchoCard + 40);
     console.log(posicion)
     if (posicion > 0) {
         antBtn.disabled = false;
     }
     
     if (posicion >= anchoCard * 3) {
-        posicion = anchoCard * 3;
+        posicion = anchoCard * 3 + 40 * 3;
         sigBtn.disabled = true;
     }
     
@@ -52,9 +52,12 @@ sigBtn.addEventListener("click", function() {
 });
 
 // Modal!!
-const mostrarModal = document.querySelector("#mostrar-modal");
-mostrarModal.addEventListener("click", function() {
-    
-    const modalCard = document.querySelector("#modal-card");
-    modalCard.showModal();
+
+const mostrarModalBotones = document.querySelectorAll(".mostrar-modal");
+mostrarModalBotones.forEach(btn => {
+    btn.addEventListener("click", function() {
+        const cardExt = btn.closest(".card-exterior");
+        const modalCard = cardExt.querySelector(".modal-card");
+        modalCard.showModal();
+    })
 })
