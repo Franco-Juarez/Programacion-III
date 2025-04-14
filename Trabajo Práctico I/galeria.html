@@ -10,13 +10,12 @@
 
   <!-- favicon -->
   <link rel="icon" type="image/x-icon" href="img/favicon.ico" />
-  <!-- Enlace a Font Awesome (versión gratuita) -->
+  <!-- Enlace a Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
 </head>
 
 <body>
-  <!-- HEADER -->
   <!-- HEADER -->
   <header class="header">
     <div class="header-container">
@@ -46,11 +45,14 @@
   </header>
 
   <main>
-    <h1>Bienvenidos a la galería</h1>
+    <section class="gallery-hero">
+      <h1>Descubrí el mundo</h1>
+      <p>
+        Explorá destinos increíbles y encontrá inspiración para tu próxima aventura
+      </p>
+    </section>
     <!-- GALERÍA -->
     <section class="gallery-section">
-      <h2>Galería</h2>
-      <p>Recorré el mundo con nuestras imágenes</p>
       <div id="gallery-container">
         <div class="img-1">
           <img src="img/gallery/asian-woman-wearing-japanese-traditional-kimono-temple-tokyo-japan.jpg"
@@ -129,9 +131,62 @@
           </div>
         </div>
       </div>
-      <a href="#contact" class="btn-gallery">
+      <a href="contacto.html" class="btn-gallery">
         Contratá un paquete
       </a>
+    </section>
+
+    <section class="testimonial-container">
+      <h2>Lo que dicen nuestros viajeros</h2>
+      <div class="testimonial-grid">
+        <div class="testimonial-card">
+          <span>⭐⭐⭐⭐⭐</span>
+          <p>"La mejor experiencia de mi vida. Todo fue perfecto, desde el primer contacto hasta el último día de
+            viaje."</p>
+            <div class="testimonial-info">
+              <img src="https://picsum.photos/id/237/200/300" alt="Testimonio 1" />
+              <div>
+                <h5>Maria López</h5> 
+                <p>Viajó a Tokio, Japón</p>
+              </div>
+            </div>
+        </div>
+        <div class="testimonial-card">
+          <span>⭐⭐⭐⭐⭐</span>
+          <p>"Es muy lindo, tranquilo y familiar. Es un pueblo chiquito donde las playas son muy lindas y las aguas cálidas"</p>
+            <div class="testimonial-info">
+              <img src="https://picsum.photos/id/237/200/300" alt="Testimonio 1" />
+              <div>
+                <h5>Roberto Perfumo</h5> 
+                <p>Viajó a Pehuen-co, Argentina</p>
+              </div>
+            </div>
+        </div>
+        <div class="testimonial-card">
+          <span>⭐⭐⭐⭐</span>
+          <p>"Sin duda es la ciudad que mas me gusta del mundo, desde sus calles, su luz, su arquitectura hasta sus magnificos museos."</p>
+            <div class="testimonial-info">
+              <img src="https://picsum.photos/id/237/200/300" alt="Testimonio 1" />
+              <div>
+                <h5>Juán Perez</h5> 
+                <p>Viajó a Paris, Francia</p>
+              </div>
+            </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="newsletter-container">
+      <h2>
+        ¿Buscando inspiración para tu próximo viaje?
+      </h2>
+      <p>
+        Suscríbete a nuestro newsletter y recibe ofertas exclusivas, consejos de viaje y destinos recomendados directamente en tu bandeja de entrada.
+      </p>
+      <form>
+        <input type="email" placeholder="Ingresa tu email" required />
+        <button type="submit">Suscribirme</button>
+      </form>
     </section>
 
   </main>
