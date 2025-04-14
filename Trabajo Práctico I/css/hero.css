@@ -1,0 +1,109 @@
+.home{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+    padding: 20px;
+    gap: 20px;
+}
+
+.titulo-logo{
+    text-decoration: none;
+    font-size: var(--font-h3);
+}
+
+h1{
+    color: var(--color-primario);
+    font-size: var(--font-h1)
+
+}
+
+.imagenes-home{
+    width: 80%;
+    height: 300px;
+    background-image: url('../img/home/im1.jpg');
+    background-size: cover; 
+    background-repeat: no-repeat; 
+    background-position: center;  
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: var(--border-radius-xl);
+    box-shadow:4px 4px 20px rgba(107, 135, 163, 0.3);
+    transition: transform 0.3s ease;
+}
+
+.imagenes-home:hover{
+    transform: scale(1.005);
+}
+
+.descripcion{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.contenido-descripcion{
+    max-width: 800px;
+}
+
+.contenido-descripcion h3 {
+    font-size: var(--font-h3);
+    margin-bottom: 20px;
+    color: var(--color-texto);
+    font-weight: 800;
+    color: var(--color-primario)
+}
+
+.contenido-descripcion p{
+    font-size: var(--font-p);
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+.btn{
+    background-color: var(--color-secundario);
+    color: var(--color-blanco);
+    padding: 10px 20px;
+    margin-top: 10px;
+    border: none;
+    text-decoration: none;
+    border-radius: var(--border-radius-lg) ;
+    font-size: var(--font-p);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    box-shadow:4px 4px 20px rgba(107, 135, 163, 0.3);
+}
+  
+.btn:hover {
+    background-color: #99bee2; 
+    transform: scale(1.05);
+}
+
+p{
+    font-size: var(--font-p);
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+.linea-deco {
+    width: 80px;
+    height: 4px;
+    background-color: var(--color-secundario);
+    margin: 0 auto 20px auto;
+    border-radius: 5px;
+  }
+
+.descripcion-p{
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    text-align: left;
+    justify-content: center;
+}
+
+.descripcion-p p{
+    flex:1;
+    padding: 10px;
+}
