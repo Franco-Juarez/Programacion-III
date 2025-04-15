@@ -138,22 +138,7 @@
   color: var(--color-blanco);
 }
 
-.btn-gallery {
-  color: var(--color-blanco);
-  background-color: var(--color-primario);
-  border: 2px solid var(--color-primario);
-  padding: 10px 20px;
-  border-radius: 8px;
-  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
-  text-decoration: none;
-  cursor: pointer;
-}
 
-.btn-gallery:hover {
-  background-color: transparent;
-  color: var(--color-primario);
-  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
-}
 
 .testimonial-container {
   display: flex;

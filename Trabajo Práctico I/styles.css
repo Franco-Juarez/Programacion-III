@@ -99,6 +99,22 @@ a {
     font-size: var(--font-p);
 }
 
+button, .btn {
+    color: var(--color-blanco);
+    background-color: var(--color-primario);
+    border: 2px solid var(--color-primario);
+    padding: 10px 20px;
+    border-radius: 8px;
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  
+  button:hover, .btn:hover {
+    background-color: transparent;
+    color: var(--color-primario);
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+  }
 .header {
     box-shadow: var(--box-shadow-sm);
     padding: var(--espaciado-md) var(--espaciado-lg);

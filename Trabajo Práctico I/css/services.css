@@ -58,7 +58,7 @@
     font-style: italic;
 }
 
-.card-bottom button {
+/* .card-bottom button {
     border-radius: 20px;
     background-color: black;
     border: 1px solid black;
@@ -72,7 +72,7 @@
     &:hover {
         background-color: rgb(31, 30, 30);
     }
-}
+} */
 
 .servicios-titulo {
     text-align: center;
