@@ -1,0 +1,60 @@
+
+/* *{
+    border: 1px solid black;
+} */
+
+h1{
+    color: blueviolet;
+    text-align: center;
+}
+.container_form_logo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+form{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+    margin-top: 20px;
+    padding: 20px;
+}
+label{
+    margin: 10px;
+}
+input{
+    margin: 5px;
+    padding: 10px;
+    border-radius: 10px;
+    border: blueviolet solid 1px;
+    width: 300px;
+}
+select{
+    margin: 5px;
+    padding: 10px;
+    border-radius: 10px;
+    border: blueviolet solid 1px;
+    width: 300px;
+}
+textarea{
+    margin: 5px;
+    padding: 10px;
+    border-radius: 10px;
+    border: blueviolet solid 1px;
+    width: 300px;
+}
+button{
+    margin: 10px;
+    padding: 10px;
+    background-color: blueviolet;
+    color: white;
+    border: black solid 1px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+button:hover{
+    background-color:blue;
+    scale: 1.1;
+    transition: 0.3s;
+}
