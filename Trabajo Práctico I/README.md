@@ -62,7 +62,7 @@ El objetivo del trabajo es desarrollar un sitio web estructurado y responsive pa
 1. Cloná el repositorio:
 
 ```plaintext
-git clone https://github.com/Franco-Juarez/Trabajo-Practico-I.git
+git clone https://github.com/Franco-Juarez/Programacion-III.git
 ```
 
 2. Creá una rama para tus cambios:

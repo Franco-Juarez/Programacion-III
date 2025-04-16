@@ -68,3 +68,13 @@ button:hover{
 .envio-reset{
     padding-top: 10px;
 }
+.check {
+    padding-top: 10px;
+}
+#ok {
+    width: 5%;
+  }
+#tilde {
+    padding: 0;
+    margin: 0;
+}
