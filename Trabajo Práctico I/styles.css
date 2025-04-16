@@ -227,7 +227,7 @@ input {
 
     a {
         text-decoration: none;
-        color: black;
+        color: white;
         cursor: pointer;
 
     }
@@ -249,7 +249,12 @@ input {
     display: flex;
     flex-direction: column;
     align-items: center;
-
+    li {
+    color:white;
+    }
+    li a {
+        color: white;
+    }
     img {
         height: 50px;
     }
@@ -261,7 +266,7 @@ input {
 }
 
 .fa-brands {
-    color: var(--color-texto);
+    color: var(--color-blanco);
     font-size: 2rem;
     transition: all .2s linear;
 }
