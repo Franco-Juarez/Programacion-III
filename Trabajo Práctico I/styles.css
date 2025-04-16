@@ -95,6 +95,7 @@ p,
 span,
 li,
 a {
+    text-decoration: none;
     font-family: var(--fuente-secundaria);
     color: var(--color-texto);
     font-size: var(--font-p);
@@ -210,7 +211,6 @@ input {
 .footer-ul-links li a:hover {
     scale: 1.05;
     transition: all 0.2s ease;
-    color: blue;
 }
 
 .footer-ul-links svg {
@@ -226,16 +226,15 @@ input {
     padding-top: 10px;
 
     a {
-        text-decoration: none;
+        
         color: white;
         cursor: pointer;
 
     }
 
     a:hover {
-        text-decoration: underline;
-        text-decoration-thickness: 5%;
-        color: #333
+        font-weight: 500;
+        color: white;
     }
 
 }
@@ -254,6 +253,9 @@ input {
     }
     li a {
         color: white;
+    }
+    li a:hover {
+        font-weight: 500;
     }
     img {
         height: 50px;
