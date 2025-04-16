@@ -174,7 +174,7 @@ input {
 }
 
 .footer {
-    background-color: var(--color-terciario);
+    background-color: var(--color-primario);
     width: 100%;
     padding: 0;
     margin: 0;
