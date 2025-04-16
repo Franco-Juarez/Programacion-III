@@ -111,11 +111,19 @@ button, .btn {
     cursor: pointer;
   }
   
-  button:hover, .btn:hover {
+button:hover, .btn:hover {
     background-color: transparent;
     color: var(--color-primario);
     transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
   }
+
+input {
+    border: none;
+    border-radius: var(--border-radius-md);
+    padding: var(--espaciado-sm);
+    border: 2px solid var(--color-primario);
+  }
+  
 .header {
     box-shadow: var(--box-shadow-sm);
     padding: var(--espaciado-md) var(--espaciado-lg);

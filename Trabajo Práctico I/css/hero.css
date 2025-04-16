@@ -63,7 +63,7 @@ h1{
     margin-bottom: 30px;
 }
 
-.btn{
+/* .btn{
     background-color: var(--color-secundario);
     color: var(--color-blanco);
     padding: 10px 20px;
@@ -79,7 +79,7 @@ h1{
 .btn:hover {
     background-color: #99bee2; 
     transform: scale(1.05);
-}
+} */
 
 p{
     font-size: var(--font-p);
