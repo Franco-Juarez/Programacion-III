@@ -10,6 +10,7 @@
 .titulo-logo{
     text-decoration: none;
     font-size: var(--font-h3);
+    display: flex;
 }
 
 h1{
