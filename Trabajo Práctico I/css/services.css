@@ -164,5 +164,13 @@
     border-top: 1px solid #333;
     padding-top: 10px;
     font-size: 20px;
+    padding: 10px;;
+    text-align: start;
     
+}
+
+.modal-content {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
 }
