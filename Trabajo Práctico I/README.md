@@ -46,12 +46,19 @@ El objetivo del trabajo es desarrollar un sitio web estructurado y responsive pa
 ```plaintext
 📦 proyecto-tech-nova
 ├── 📂 css
-│   ├── style.css
+│   ├── contact.css
+|   |── gallery.css
+|   |── hero.css
+|   |── services.css
 ├── 📂 img
 │   ├── (imágenes del proyecto)
-├── 📂 js (opcional)
+├── 📂 js
 │   └── scripts.js
+├── 📜 contacto.html
+├── 📜 servicios.html
+├── 📜 galeria.html
 ├── 📜 index.html
+├── 📜 styles.css (estilos globales)
 └── 📜 README.md
 ```
 
