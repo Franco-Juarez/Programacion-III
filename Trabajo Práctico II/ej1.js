@@ -2,8 +2,12 @@ const titulo = document.getElementById("tituloPrincipal");
 titulo.innerHTML = "Nuevo Título";
 
 const parrafos = document.getElementsByClassName("parrafo");
-parrafos[0].style.color = "red";
-parrafos[1].style.color = "blue";
+Object.values(parrafos).forEach((parrafo) => {
+    parrafo.style.color = "blue";
+})
+
+console.log(parrafos)
+console.log(Object.values(parrafos))
 
 const listItems = document.querySelectorAll("li");
 listItems.forEach((item) => {
