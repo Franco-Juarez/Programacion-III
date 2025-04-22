@@ -1,0 +1,92 @@
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Trabajo Práctico II</title>
+</head>
+<style>
+
+    .completada {
+        text-decoration: line-through;
+        color: gray;
+    }
+
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        margin: 0;
+        padding: 20px;
+    }
+
+    form {
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        margin: auto;
+    }
+
+    input[type="text"] {
+        width: calc(100% - 20px);
+        padding: 10px;
+        margin-bottom: 10px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+    }
+
+    button {
+        background-color: #28a745;
+        color: white;
+        padding: 10px;
+        border-radius: 5px;
+        border: none;
+        cursor: pointer;
+    }
+
+    button:hover {
+        background-color: #218838;
+    }
+
+    ul {
+        list-style-type: none;
+        padding: 0;
+    }
+
+    li {
+        background-color: #fff;
+        padding: 10px;
+        margin: 5px 0;
+        border-radius: 5px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    li button {
+        background-color: #dc3545;
+        padding: 5px 10px;
+        border-radius: 5px;
+        border: none;
+        cursor: pointer;
+    }
+
+    li button:hover {
+        background-color: #c82333;
+    }
+
+    
+</style>
+
+<body>
+
+    <!-- LISTA DE TAREAS -->
+     <form id="todo-form">
+      <input type="text" id="inputTarea" placeholder="Agregar tarea">
+      <button id="submit-todo" type="submit">Agregar</button>
+     </form>
+    <ul id="todo"></ul>
+
+    <script src="../scripts/punto4.js"></script>
+</body>
+
+</html>
