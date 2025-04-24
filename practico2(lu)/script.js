@@ -24,12 +24,12 @@ lis.forEach(li => {
 
 //evento del boton agregar
 let agregar = document.querySelector(".agregar");
+let contenedor2 = document.querySelector(".contenedor2");
 
 agregar.addEventListener("click", () => {
     //capturo el valor del input
     let input = document.getElementById("miInput");
     let nombre = input.value;
-    let contenedor2 = document.querySelector(".contenedor2");
 
     //creacion del li
     let nuevoLi = document.createElement("li");
