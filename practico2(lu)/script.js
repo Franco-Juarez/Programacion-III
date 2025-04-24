@@ -145,7 +145,7 @@ formulario2.addEventListener("submit", (e) => {
     }
 
     // Validar Edad
-    if (edad === "" || isNaN(edad) || Number(edad) <= 18) {
+    if (edad === "" || isNaN(edad) || Number(edad) < 18) {
         esValido = false;
         let mensaje = document.createElement("p");
         mensaje.id = "errorEdad";
@@ -157,7 +157,7 @@ formulario2.addEventListener("submit", (e) => {
     // Si todos los campos son válidos, puedes continuar con el envío del formulario
     if (esValido) {
         alert("Formulario enviado correctamente.");
-        formulario.reset();
+        formulario2.reset();
         // Aquí puedes agregar el código para procesar el formulario, como enviarlo a un servidor
     }
 });
