@@ -7,7 +7,7 @@ titulo.textContent = "Trabajo Practico 2";
 //cambio el color de los parrafos
 let parrafos = document.getElementsByClassName("parrafo");
 
-for(let parrafo = 0; parrafo <parrafos.length; parrafo++){
+for (let parrafo = 0; parrafo < parrafos.length; parrafo++) {
     parrafos[parrafo].style.color = "blue";
 }
 
@@ -25,24 +25,24 @@ lis.forEach(li => {
 //evento del boton agregar
 let agregar = document.querySelector(".agregar");
 
-agregar.addEventListener("click",() => {
+agregar.addEventListener("click", () => {
     //capturo el valor del input
     let input = document.getElementById("miInput");
     let nombre = input.value;
     let contenedor2 = document.querySelector(".contenedor2");
-    
+
     //creacion del li
     let nuevoLi = document.createElement("li");
     nuevoLi.textContent = `Se agrego a ${nombre}!`;
-    
+
     //creacion boton eliminar
     let eliminarBtn = document.createElement("button");
-    eliminarBtn.textContent ="Eliminar";
+    eliminarBtn.textContent = "Eliminar";
 
-    eliminarBtn.addEventListener("click" , () => {
+    eliminarBtn.addEventListener("click", () => {
         nuevoLi.remove();
     });
-    
+
     //se elimina del grupo
     nuevoLi.appendChild(eliminarBtn);
     //se agrega al grupo
@@ -57,12 +57,27 @@ let ocultarBtn = document.getElementById("ocultarBtn");
 let parrafos2 = document.querySelectorAll(".parrafo2");
 
 //creo los eventos
-resaltarBtn.addEventListener("click", () =>{
-    parrafos2.forEach(p => p.classList.add("resaltado"));
+resaltarBtn.addEventListener("click", () => {
+    parrafos2.forEach(p => {
+        p.classList.toggle("resaltado")
+        if (p.classList.contains("resaltado")) {
+            resaltarBtn.textContent = "Limpiar";
+        } else {
+            resaltarBtn.textContent = "Resaltar";
+        }
+    });
 });
 
-ocultarBtn.addEventListener("click", () =>{
-    parrafos2.forEach(p => p.classList.toggle("oculto"));
+ocultarBtn.addEventListener("click", () => {
+    parrafos2.forEach(p => {
+        p.classList.toggle("oculto")
+        if (p.classList.contains("oculto")) {
+            ocultarBtn.textContent = "Mostrar";
+        } else {
+            ocultarBtn.textContent = "Ocultar";
+        }
+    });
+
 });
 
 
@@ -72,27 +87,27 @@ let formulario = document.getElementById("formulario");
 let listaTareas = document.getElementById("listaTareas");
 let input = document.getElementsByClassName("texto")[0];
 
-formulario.addEventListener('submit', (evento) =>{
+formulario.addEventListener('submit', (evento) => {
     evento.preventDefault();
     let tarea = input.value;
 
     let nuevaTarea = document.createElement("li");
     nuevaTarea.textContent = tarea;
-    
-    nuevaTarea.addEventListener("click", () =>{
+
+    nuevaTarea.addEventListener("click", () => {
         nuevaTarea.classList.add("completado");
     });
 
     listaTareas.appendChild(nuevaTarea);
 
-    input.value="";
+    input.value = "";
 });
 
 //Ejercicio 5-------------------------------------------------------------------
 
-let formulario2 =document.getElementById("formulario2");
+let formulario2 = document.getElementById("formulario2");
 
-formulario2.addEventListener("submit", (e) =>{
+formulario2.addEventListener("submit", (e) => {
     e.preventDefault();
 
     let nombre = document.getElementById("nombre").value.trim();

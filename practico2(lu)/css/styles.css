@@ -1,20 +1,26 @@
 /*Ejercicio 2-------------------------------------------------------------------*/
 
-.resaltado{
+.resaltado {
     background-color: rgb(253, 255, 138);
-    color:black;
+    color: black;
 }
 
-.oculto{
+.oculto {
     display: none;
 }
 
-.completado{
-    background-color:rgb(157, 255, 138);
+.completado {
+    background-color: rgb(157, 255, 138);
     text-decoration: line-through;
     color: black;
 }
 
+.parrafos-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 120px;
+}
 
 /* Estilos generales */
 body {
@@ -29,7 +35,8 @@ h1 {
 }
 
 /* Estilos para los párrafos */
-.parrafo, .parrafo2 {
+.parrafo,
+.parrafo2 {
     color: blue;
     margin: 10px 0;
 }
@@ -50,7 +57,8 @@ button:hover {
 }
 
 /* Estilos para los inputs */
-input[type="text"], input[type="email"] {
+input[type="text"],
+input[type="email"] {
     padding: 8px;
     margin: 5px;
     border: 1px solid #ccc;
@@ -80,7 +88,7 @@ ul li {
     display: none;
 }
 
-form{
+form {
     display: flex;
     flex-direction: column;
 }
