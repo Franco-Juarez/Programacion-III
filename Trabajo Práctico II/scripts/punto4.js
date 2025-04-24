@@ -3,11 +3,11 @@ const todoForm = document.getElementById("todo-form");
 const todoInput = document.getElementById("inputTarea");
 const todoList = document.getElementById("todo");
 
-todoForm.addEventListener("submit",  (event) => {
+todoForm.addEventListener("submit", (event) => {
   event.preventDefault();
   const nuevaTarea = document.createElement("li");
   nuevaTarea.innerHTML = ` 
-    <span style="display:flex; gap: 10px; cursor: pointer"><li class="completar">${todoInput.value}</li></span>
+    <span class="completar" style="display:flex; gap: 10px; cursor: pointer">${todoInput.value}</span>
   `
   todoList.appendChild(nuevaTarea);
   todoInput.value = "";
