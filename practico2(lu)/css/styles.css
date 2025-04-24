@@ -1,0 +1,86 @@
+/*Ejercicio 2-------------------------------------------------------------------*/
+
+.resaltado{
+    background-color: rgb(253, 255, 138);
+    color:black;
+}
+
+.oculto{
+    display: none;
+}
+
+.completado{
+    background-color:rgb(157, 255, 138);
+    text-decoration: line-through;
+    color: black;
+}
+
+
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    text-align: center;
+    padding: 20px;
+}
+
+h1 {
+    color: #333;
+}
+
+/* Estilos para los párrafos */
+.parrafo, .parrafo2 {
+    color: blue;
+    margin: 10px 0;
+}
+
+/* Estilos para los botones */
+button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+/* Estilos para los inputs */
+input[type="text"], input[type="email"] {
+    padding: 8px;
+    margin: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Estilo para las listas */
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+ul li {
+    background-color: #e2e2e2;
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 5px;
+}
+
+/* Estilos para el resaltado y ocultado */
+.resaltado {
+    background-color: yellow;
+    font-weight: bold;
+}
+
+.oculto {
+    display: none;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+}

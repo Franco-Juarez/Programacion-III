@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practico 2</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <!-- Ejercicio 1------------------------------------------------------------------- -->
+    
+    <!-- añadi el titulo -->
+    <h1 id="tituloPrincipal">Este es el Tp 2</h1>
+    
+    <!-- puse los parrafos -->
+    <p class="parrafo">Hola estos son parrafos</p>
+    <p class="parrafo">y es de color azul</p>
+
+    <!-- y el contenedor con los tres li -->
+    <div id="contenedor">
+        <ul>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
+
+    <!-- Ejercicio 2------------------------------------------------------------------- -->
+
+    <input type="text" placeholder="añade a alguien al grupo!" id="miInput">
+    <button class="agregar">Agregar</button>
+    <ul class="contenedor2"></ul>
+
+    <!-- Ejercicio 3------------------------------------------------------------------- -->
+    
+    <p class="parrafo2">Este es el parrafo 1</p>
+    <p class="parrafo2">Este es el parrafo 2</p>
+    <p class="parrafo2">Este es el parrafo 3</p>
+
+    <button id="resaltarBtn">Resaltar</button>
+    <button id="ocultarBtn">Ocultar</button>
+
+    <!-- Ejercicio 4------------------------------------------------------------------- -->
+
+    <form action="" id="formulario">
+        <input type="text" class="texto" placeholder="Agregar Tarea">
+        <button type="submit" id="enviar">Agregar tarea</button>
+    </form>
+    
+    <ul id="listaTareas"></ul>
+
+    <!-- Ejercicio 5------------------------------------------------------------------- -->
+    
+    <form id="formulario2">
+        <label for="nombre">Nombre</label>
+        <input type="text" id="nombre" placeholder="Nombre" class="nombre">
+        <span class="error" id="errorNombre"></span>
+      
+        <label for="email">Email</label>
+        <input type="email" id="email" placeholder="Email">
+        <span class="error" id="errorEmail"></span>
+      
+        <label for="edad">Edad</label>
+        <input type="text" id="edad" placeholder="Edad" class="edad">
+        <span class="error" id="errorEdad"></span>
+      
+        <button type="submit" id="enviar2">Enviar</button>
+    </form>
+    
+    <script src="script.js"></script>
+</body>
+</html>
