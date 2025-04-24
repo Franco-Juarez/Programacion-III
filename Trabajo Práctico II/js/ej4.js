@@ -1,16 +1,21 @@
-const form = document.getElementById("form");
-const ulList = document.querySelector("ul");
-const txtInput = document.getElementById("txtInput");
-form.addEventListener("submit", (e) => {
-    e.preventDefault();
-    
-    const nuevaLi = document.createElement("li");
-    nuevaLi.textContent = txtInput.value;
-    ulList.appendChild(nuevaLi);
-    txtInput.value = "";
+// FORMULARIO DE TODO LIST
+const todoForm = document.getElementById("todo-form");
+const todoInput = document.getElementById("inputTarea");
+const todoList = document.getElementById("todo");
 
+todoForm.addEventListener("submit", (event) => {
+    event.preventDefault();
+    const nuevaTarea = document.createElement("li");
+    nuevaTarea.innerHTML = ` 
+    <span class="completar" style="display:flex; gap: 10px; cursor: pointer">${todoInput.value}</span>
+  `
+    todoList.appendChild(nuevaTarea);
+    todoInput.value = "";
+});
 
-    nuevaLi.addEventListener("click", () => {
-        nuevaLi.classList.toggle("completado");
-    })
-})
+// Agregar evento de clic a cada elemento de la lista de tareas
+todoList.addEventListener("click", (event) => {
+    if (event.target.classList.contains("completar")) {
+        event.target.classList.toggle("completada");
+    }
+});

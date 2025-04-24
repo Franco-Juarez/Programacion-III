@@ -1,50 +1,46 @@
-const nombreInput = document.getElementById("nombreInput");
-const emailInput = document.getElementById("emailInput");
-const edadDiv = document.getElementById("edadDiv");
-const emailDiv = document.getElementById("emailDiv");
-const nombreDiv = document.getElementById("nombreDiv");
-const edadInput = document.getElementById("edadInput");
-const btnEnviar = document.getElementById("btnEnviar");
-const form = document.getElementById("form");
-const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
-function mostrarErrores(campo, mensaje){
-    const error = document.createElement("p");
-    error.innerText = mensaje;
-    error.classList.add("error");
-    campo.appendChild(error);
-}
+// COMPROBAR DATOS DEL FORMULARIO
+const formValidacion = document.getElementById("Validación");
+formValidacion.addEventListener("submit", function (event) {
+    event.preventDefault(); // Evitar el envío del formulario por defecto
 
 
-form.addEventListener("submit", (e) => {
-    e.preventDefault();
+    const nombre = document.getElementById("nombre").value;
+    const email = document.getElementById("email").value;
+    const edad = document.getElementById("edad").value;
+    const nombreError = document.querySelector(".nombre-error");
+    const emailError = document.querySelector(".email-error");
+    const edadError = document.querySelector(".edad-error");
 
-    document.querySelectorAll(".error").forEach(el => el.remove());
-
-    let error = false;
-
-    if(nombreInput.value === ""){
-        mostrarErrores(nombreDiv, "El nombre es obligatorio");
-        error = true;
+    // Validar nombre
+    if (nombre === "" || email === "" || edad === "") {
+        alert("Ningún campo puede estar vacío");
+        throw new Error("Uno o más campos vacíos");
     }
 
-    if(emailInput.value === ""){
-        mostrarErrores(emailDiv, "El email es obligatorio");
-        error = true;
-    }else if (!emailRegex.test(emailInput.value)){
-        mostrarErrores(emailDiv, "El email no es válido");
-        error = true;
+    if (nombre.length < 3) {
+        alert("El nombre debe tener al menos 3 caracteres.");
+        nombreError.textContent = "El nombre debe tener al menos 3 caracteres.";
+        throw new Error("Nombre inválido");
     }
 
-    if(edadInput.value === ""){
-        mostrarErrores(edadDiv, "La edad es obligatoria");
-        error = true;
-    }else if(edadInput.value < 18){
-        mostrarErrores(edadDiv, "La edad no puede ser menos de 18");
-        error = true;
+    // Validar email
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+        alert("Por favor, ingresa un email válido.");
+        emailError.textContent = "Formato de email inválido.";
+        throw new Error("Formato de email inválido");
     }
 
-    if(!error){
-        form.submit();
+    // Validar edad
+    if (isNaN(edad) || edad < 18) {
+        alert("Debes ser mayor de 18 años.");
+        edadError.textContent = "Edad inválida. Debes ser mayor de 18 años.";
+        throw new Error("Edad inválida");
     }
-})
+
+    alert("Formulario enviado correctamente.");
+    if (nombreError) nombreError.textContent = "";
+    if (emailError) emailError.textContent = "";
+    if (edadError) edadError.textContent = "";
+    formValidacion.reset();
+});
