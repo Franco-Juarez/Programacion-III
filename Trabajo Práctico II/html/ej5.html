@@ -38,15 +38,6 @@
         border: 1px solid #ccc;
     }
 
-    input[type="submit"] {
-        background-color: #28a745;
-        color: white;
-        padding: 10px;
-        border-radius: 5px;
-        border: none;
-        cursor: pointer;
-    }
-
     .nombre-error,
     .email-error,
     .edad-error {
@@ -55,11 +46,19 @@
         margin-top: -10px;
         margin-bottom: 10px;
     }
+
+    button {
+        background-color: #28a745;
+        color: white;
+        padding: 10px 15px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
 </style>
 
 <body>
-    <!-- Validación de formularios -->
-    <form id="Validación">
+    <form>
         <div>
             <label for="nombre">Nombre:</label>
             <input type="text" id="nombre" name="nombre" required>
@@ -75,7 +74,7 @@
             <input type="number" id="edad" name="edad" required>
             <p class="edad-error"></p>
         </div>
-        <input type="submit" value="Enviar">
+        <button type="submit" id="btnSubmit">Enviar</button>
     </form>
 
     <script src="../js/ej5.js"></script>

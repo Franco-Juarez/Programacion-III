@@ -1,8 +1,8 @@
 // COMPROBAR DATOS DEL FORMULARIO
-const formValidacion = document.getElementById("Validación");
-formValidacion.addEventListener("submit", function (event) {
-    event.preventDefault(); // Evitar el envío del formulario por defecto
-
+const btnValidacion = document.getElementById("btnSubmit");
+const form = document.querySelector("form");
+btnValidacion.addEventListener("click", function (event) {
+    event.preventDefault();
 
     const nombre = document.getElementById("nombre").value;
     const email = document.getElementById("email").value;
@@ -39,8 +39,9 @@ formValidacion.addEventListener("submit", function (event) {
     }
 
     alert("Formulario enviado correctamente.");
+
     if (nombreError) nombreError.textContent = "";
     if (emailError) emailError.textContent = "";
     if (edadError) edadError.textContent = "";
-    formValidacion.reset();
+    form.reset();
 });
