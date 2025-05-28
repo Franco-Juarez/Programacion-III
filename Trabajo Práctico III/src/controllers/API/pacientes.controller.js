@@ -5,15 +5,17 @@ const {
   deletePacienteModel,
   getPacientePorIdModel,
   updatePacienteModel,
+  validate,
+  findByEmail
 } = require("../../models/sqlite/paciente.model.js");
 
 class PacientesController {
-  async login(req, res) {
+  async login(req, res, next) {
     //recolecto credenciales
     try {
       const { email, password } = req.body;
 
-      const token = await pacientesModel.validate(email, password);
+      const token = await validate(email, password);
 
       if (!token) {
         throw new CustomError("Credenciales inválidas", 401);
@@ -42,7 +44,7 @@ class PacientesController {
     try {
       const body = req.body;
 
-      if (!body.dni || !body.nombre || !body.apellido || !body.email) {
+      if (!body.dni || !body.nombre || !body.apellido || !body.email || !body.password) {
         throw new CustomError("Faltan datos en la petición", 400);
       }
 
@@ -88,7 +90,7 @@ class PacientesController {
 
       /* const pacientePorId = await updatePacienteModel(id, body); */
 
-      if (!body.dni || !body.nombre || !body.apellido || !body.email) {
+      if (!body.dni || !body.nombre || !body.apellido || !body.email || !body.password) {
         return res.status(400).json({ message: "Faltan datos en la peticion" });
       }
 
@@ -97,6 +99,7 @@ class PacientesController {
         email: body.email,
         nombre: body.nombre,
         apellido: body.apellido,
+        password: body.password
       });
 
       if (!pacienteActualizado) {

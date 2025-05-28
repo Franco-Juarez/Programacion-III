@@ -5,7 +5,7 @@ const rutaPacientes = Router();
 rutaPacientes.get('/', verifyTokenMiddleware, pacientesController.list);
 rutaPacientes.post('/login',pacientesController.login)
 rutaPacientes.get('/:id',verifyTokenMiddleware,pacientesController.getById);
-rutaPacientes.post('/',verifyTokenMiddleware,pacientesController.create);
+rutaPacientes.post('/',pacientesController.create);
 rutaPacientes.put('/:id',verifyTokenMiddleware,pacientesController.update);
 rutaPacientes.delete('/:id',verifyTokenMiddleware,pacientesController.delete);
 
