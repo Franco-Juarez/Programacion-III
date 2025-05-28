@@ -7,8 +7,10 @@ const Paciente = sequelize.define('Paciente', {
     primaryKey: true,
     autoIncrement: true
   },
-  name: DataTypes.STRING,
+  dni: DataTypes.STRING,
+  nombre: DataTypes.STRING,
+  apellido: DataTypes.STRING,
   email: DataTypes.STRING
 });
 
-module.exports = {Paciente};
+module.exports = Paciente;

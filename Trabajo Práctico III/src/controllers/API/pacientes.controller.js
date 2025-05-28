@@ -1,5 +1,11 @@
-const pacientesModel = require("./../../models/mock/pacientes.models.js");
-const Paciente = require("./../../models/mock/entities/paciente.entity.js");
+const CustomError = require("../../utils/customError.js");
+const {
+  getPacientesModel,
+  createPacienteModel,
+  deletePacienteModel,
+  getPacientePorIdModel,
+  updatePacienteModel,
+} = require("../../models/sqlite/paciente.model.js");
 
 class PacientesController {
   async login(req, res) {
@@ -8,48 +14,120 @@ class PacientesController {
       const { email, password } = req.body;
 
       const token = await pacientesModel.validate(email, password);
-    
-         res.status(200).json(token);
-   
-        
 
+      if (!token) {
+        throw new CustomError("Credenciales inválidas", 401);
+      }
 
-     
+      res.status(200).json(token);
     } catch (error) {
-      res.status(401).json({ message: error.message });
+      next(error);
     }
   }
 
-  async list(req, res) {
-    res.status(200).json(await pacientesModel.list());
-  }
-  async create(req, res) {
-    const { dni, nombre, apellido, email } = req.body;
+  async list(req, res, next) {
+    try {
+      const pacientes = await getPacientesModel();
 
-    const nuevoPaciente = new Paciente(dni, nombre, apellido, email);
+      if (!pacientes) {
+        throw new CustomError("No se encontraron pacientes", 404);
+      }
 
-    const info = await pacientesModel.create(nuevoPaciente);
-    res.status(200).json(info);
+      res.status(200).json(pacientes);
+    } catch (error) {
+      next(error);
+    }
   }
-  delete(req, res) {
-    const id = req.params.id;
+  async create(req, res, next) {
+    try {
+      const body = req.body;
 
-    const pacienteBorrado = pacientesModel.delete(id)   ;
-    pacienteBorrado.then(paciente=>{
-        res.status(200).json(paciente);
-    }).catch(
-        error=>{
-            res.status(404).json({message:`no existe el paciente conh el id:${id}`,error})}
-        
-    );
-   
+      if (!body.dni || !body.nombre || !body.apellido || !body.email) {
+        throw new CustomError("Faltan datos en la petición", 400);
+      }
+
+      const info = await createPacienteModel(body);
+      return res.status(200).json(info);
+    } catch (error) {
+      next(error);
+    }
   }
-  update(req, res) {
-    const id = req.params.id;
-    const { dni, nombre, apellido, email } = req.body;
-    const nuevoPaciente = new Paciente(dni, nombre, apellido, email);
-    pacientesModel.update(id, nuevoPaciente);
-    res.status(200).json({ message: "actualizado" });
+  async delete(req, res, next) {
+    try {
+      const id = req.params.id;
+
+      if (!id) {
+        throw new CustomError("Falta el id que se quiere eliminar", 400);
+      }
+      const pacienteEliminado = await deletePacienteModel(id);
+
+      if (!pacienteEliminado) {
+        throw new CustomError(
+          `No se encuentra el paciente con el id ${id}`,
+          404
+        );
+      }
+
+      res
+        .status(200)
+        .json({ message: `Paciente eliminado`, pacienteEliminado });
+    } catch (error) {
+      next(error);
+    }
+  }
+  async update(req, res, next) {
+    try {
+      const id = req.params.id;
+      const body = req.body;
+
+      if (!id) {
+        return res
+          .status(400)
+          .json({ message: "Falta el id que se quiere actualizar" });
+      }
+
+      /* const pacientePorId = await updatePacienteModel(id, body); */
+
+      if (!body.dni || !body.nombre || !body.apellido || !body.email) {
+        return res.status(400).json({ message: "Faltan datos en la peticion" });
+      }
+
+      const pacienteActualizado = await updatePacienteModel(id, {
+        dni: body.dni,
+        email: body.email,
+        nombre: body.nombre,
+        apellido: body.apellido,
+      });
+
+      if (!pacienteActualizado) {
+        throw new CustomError(
+          `No se encuentra el paciente con el id ${id}`,
+          404
+        );
+      }
+
+      res
+        .status(200)
+        .json({ message: "Paciente actualizado", pacienteActualizado });
+    } catch (error) {
+      next(error);
+    }
+  }
+  async getById(req, res, next) {
+    try {
+      const pacienteEncontrado = await getPacientePorIdModel(req.params.id);
+
+      if (!pacienteEncontrado) {
+        throw new CustomError(
+          `No se encuentra el paciente con el id ${req.params.id}`,
+          404
+        );
+      }
+
+      return res.status(200).json(pacienteEncontrado);
+    } catch (error) {
+      next(error);
+    }
   }
 }
 
