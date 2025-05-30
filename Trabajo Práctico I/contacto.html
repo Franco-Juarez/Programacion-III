@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto - Travel Agency</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="css/contact.css">
+    <!-- Enlace a Font Awesome (versión gratuita) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- favicon -->
+    <link rel="icon" type="image/x-icon" href="img/favicon.ico" />
+</head>
+
+<body>
+    <!-- HEADER -->
+    <header class="header">
+        <div class="header-container">
+            <a href="index.html">
+                <img src="img/logo.png" alt="Logo de agencia" />
+            </a>
+            <nav>
+                <ul class="nav-ul">
+                    <li>
+                        <a href="servicios.html">
+                            Servicios
+                        </a>
+                    </li>
+                    <li>
+                        <a href="galeria.html">
+                            Galería
+                        </a>
+                    </li>
+                    <li>
+                        <a href="contacto.html">
+                            Contacto
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <h1>Contáctanos y deja tu consulta:</h1>
+        <div class="container_form_logo">            
+            <form action="/destino" method="post">
+                <label for="nombre">Nombre:</label>
+                    <input type="text" id="nombre" name="nombre" placeholder="Emmett Lathrop" required>
+                <label for="apellido">Apellido:</label>
+                    <input type="text" id="apellido" name="apellido" placeholder="Brown" required>
+                <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" placeholder="outatime@delorean.com" required>
+                <label for="telefono">Teléfono:</label>
+                    <input type="tel" id="telefono" name="telefono" placeholder="555-4385" required>
+                <label for="pais">País:</label>
+                    <select id="pais" name="pais" required>
+                        <option value="" disabled selected>Selecciona tu país de residencia</option>
+                        <option value="argentina">Argentina</option>
+                        <option value="chile">Chile</option>
+                        <option value="paraguay">Paraguay</option>
+                        <option value="uruguay">Uruguay</option>
+                    </select>
+                <label for="comentarios">Comentarios:</label>
+                    <textarea id="comentarios" name="comentarios" rows="4" cols="50"></textarea>
+                <div class="check">
+                    <input type="checkbox" id="ok" name="terminos" required>
+                    <label id="tilde" for="ok">Acepto términos y condiciones.</label>
+                </div>
+                <div class="envio-reset">
+                    <button type="submit" class="btn">Enviar</button>
+                    <button type="reset" class="btn">Limpiar Campos</button>
+                </div>
+
+            </form>
+            
+
+            <div class="contenedor-picachu">
+                <img src="img/logo.png" alt="logo_agencia" width="500" height="400">
+            </div>
+
+        </div>
+
+    </main>
+
+    <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-container">
+      <ul class="footer-ul-links">
+        <li>
+          <a href="https://www.instagram.com/" target="_blank">
+            <i class="fa-brands fa-instagram"></i>
+          </a>
+        </li>
+        <li>
+          <a href="https://www.linkedin.com/" target="_blank">
+            <i class="fa-brands fa-linkedin"></i>
+          </a>
+        </li>
+        <li>
+          <a href="https://www.github.com/" target="_blank">
+            <i class="fa-brands fa-github"></i>
+          </a>
+        </li>
+
+      </ul>
+
+      <ul class="footer-ul-copy">
+        <li>
+          <a href="#hero">
+            <img src="img/techlogo.png" alt="Logo de TechNova" />
+          </a>
+        </li>
+        <li>
+          Copyright © 2025 TechNova Solutions. Todos los derechos reservados.
+        </li>
+        <li>
+          Desarrollado por <a href="https://www.technovasolutions.com" target="_blank">TechNova Solutions</a>
+        </li>
+      </ul>
+
+      <ul class="footer-ul-contacto">
+        <li>
+          <a href="mailto:agencia@agencia.com">
+            Email
+          </a>
+        </li>
+        <li>
+          <a href="tel:+54 11 5555 5555">
+            Teléfono
+          </a>
+        </li>
+        <li>
+          <a href="https://maps.app.goo.gl/7THu4XcsCN3aJfNr8" target="_blank">
+            Dirección: Calle Falsa 1234
+          </a>
+        </li>
+      </ul>
+    </div>
+  </footer>
+
+    <script src="js/scripts.js"></script>
+</body>
+
+</html>

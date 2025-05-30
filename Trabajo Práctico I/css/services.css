@@ -1,9 +1,9 @@
 #servicios {
     margin: 0 auto;
-  /*   padding: 0 6.5rem; */
+    /*   padding: 0 6.5rem; */
     box-sizing: border-box;
     background-color: rgb(245, 247, 247);
-  /*   width: 100%; */
+    /*   width: 100%; */
 }
 
 .card-exterior {
@@ -11,7 +11,7 @@
     border-radius: 20px;
     margin: 0 10px;
     max-width: 300px;
-    
+
 }
 
 .card {
@@ -34,7 +34,8 @@
     margin-bottom: 10px;
 
     align-items: center;
-    img {    
+
+    img {
         height: 16px;
         width: 16px;
         margin-right: 5px;
@@ -58,22 +59,6 @@
     font-style: italic;
 }
 
-.card-bottom button {
-    border-radius: 20px;
-    background-color: black;
-    border: 1px solid black;
-    color: white;
-    padding: 10px;
-    cursor: pointer;
-    height: 2.5rem;
-    
-    margin: 5px;
-    transition: background-color 0.3s ease;
-    &:hover {
-        background-color: rgb(31, 30, 30);
-    }
-}
-
 .servicios-titulo {
     text-align: center;
     font-size: 50px;
@@ -89,6 +74,7 @@
     overflow-x: auto;
     scroll-behavior: smooth;
     scrollbar-width: none;
+
     li:first-child {
         padding-left: 0px;
     }
@@ -101,20 +87,22 @@
     justify-content: center;
     gap: 10px;
     padding: 20px 0 20px 0;
-    
+
     button {
         border-radius: 20px;
-        background-color: black;
-        border: 1px solid black;
+        background-color: var(--color-primario);
+        border: 1px solid var(--color-primario);
         color: white;
         font-weight: bold;
         padding: 10px;
         width: 40px;
         cursor: pointer;
         transition: background-color 0.3s ease;
+
         &:hover {
-            background-color: rgb(31, 30, 30);
+            background-color: transparent;
         }
+
         &:disabled {
             background-color: rgb(136, 145, 145);
             cursor: not-allowed;
@@ -127,10 +115,12 @@
     border-radius: 20px;
     padding: 20px;
     margin: 3rem auto;
+
     form {
         display: flex;
         justify-content: end;
         margin-bottom: 10px;
+
         button {
             border-radius: 100%;
             background-color: black;
@@ -141,6 +131,7 @@
             justify-content: center;
             cursor: pointer;
             transition: background-color 0.3s ease;
+
             &:hover {
                 background-color: rgb(31, 30, 30);
             }
@@ -148,7 +139,7 @@
     }
 }
 
-.modal-card > img {
+.modal-card>img {
     height: 200px;
     width: 400px;
     margin: 0 auto;
@@ -164,5 +155,5 @@
     border-top: 1px solid #333;
     padding-top: 10px;
     font-size: 20px;
-    
+
 }

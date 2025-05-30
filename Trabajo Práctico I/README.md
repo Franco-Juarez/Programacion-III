@@ -46,12 +46,19 @@ El objetivo del trabajo es desarrollar un sitio web estructurado y responsive pa
 ```plaintext
 📦 proyecto-tech-nova
 ├── 📂 css
-│   ├── style.css
+│   ├── contact.css
+|   |── gallery.css
+|   |── hero.css
+|   |── services.css
 ├── 📂 img
 │   ├── (imágenes del proyecto)
-├── 📂 js (opcional)
+├── 📂 js
 │   └── scripts.js
+├── 📜 contacto.html
+├── 📜 servicios.html
+├── 📜 galeria.html
 ├── 📜 index.html
+├── 📜 styles.css (estilos globales)
 └── 📜 README.md
 ```
 
@@ -62,7 +69,7 @@ El objetivo del trabajo es desarrollar un sitio web estructurado y responsive pa
 1. Cloná el repositorio:
 
 ```plaintext
-git clone https://github.com/Franco-Juarez/Trabajo-Practico-I.git
+git clone https://github.com/Franco-Juarez/Programacion-III.git
 ```
 
 2. Creá una rama para tus cambios:
