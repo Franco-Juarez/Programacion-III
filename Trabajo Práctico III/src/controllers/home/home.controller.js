@@ -1,4 +1,4 @@
-const { getTurnosModel } = require("../../models/sqlite/turno.model.js"); // Ajusta el path si es necesario
+const { getTurnosModel } = require("../../models/sqlite/turno.model");
 
 const home = async (req, res) => {
     try {

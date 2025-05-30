@@ -5,15 +5,17 @@ const {
   deletePacienteModel,
   getPacientePorIdModel,
   updatePacienteModel,
+  validate,
+  findByEmail
 } = require("../../models/sqlite/paciente.model.js");
 
 class PacientesController {
-  async login(req, res) {
+  async login(req, res, next) {
     //recolecto credenciales
     try {
       const { email, password } = req.body;
 
-      const token = await pacientesModel.validate(email, password);
+      const token = await validate(email, password);
 
       if (!token) {
         throw new CustomError("Credenciales inválidas", 401);
@@ -96,7 +98,7 @@ class PacientesController {
         dni: body.dni,
         email: body.email,
         nombre: body.nombre,
-        apellido: body.apellido,
+        apellido: body.apellido
       });
 
       if (!pacienteActualizado) {
