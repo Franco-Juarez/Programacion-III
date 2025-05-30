@@ -52,6 +52,16 @@ class TurnosController {
     }
   }
 
+  async obtenerTurnos(req, res, next) {
+      try {
+        const { getTurnosModel } = require("../../models/sqlite/turno.model");
+        const turnos = await getTurnosModel();
+        res.status(200).json(turnos);
+      } catch(error) {
+        next(error);
+      }
+  }
+
   async deleteTurno(req, res, next){
     try{
       const id = req.params.id;

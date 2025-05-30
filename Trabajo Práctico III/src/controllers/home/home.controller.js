@@ -1,17 +1,19 @@
+const { getTurnosModel } = require("../../models/sqlite/turno.model.js"); // Ajusta el path si es necesario
 
-// controladores
 const home = async (req, res) => {
-    res.render('index', { 
-        title: 'Mi aplicación Express',
-        message: '¡Hola desde el servidor!' ,
-        showFeatures: true,
-        features: [
-            'Descripción de la característica 1' ,
-            'Descripción de la característica 2',
-            'Descripción de la característica 3'
-            
-        ]
-    });
+    try {
+        const turnos = await getTurnosModel();
+        res.render('index', { 
+            title: 'Sistema de turnos',
+            turnos
+        });
+    } catch (error) {
+        res.render('index', { 
+            title: 'Sistema de turnos',
+            turnos: [],
+            error: 'No se pudieron obtener los turnos'
+        });
+    }
 }
 module.exports = {
    home

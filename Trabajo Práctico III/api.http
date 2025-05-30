@@ -1,0 +1,8 @@
+## Login de paciente
+POST http://localhost:3000/api/v1/pacientes/login
+Content-Type: application/json
+
+{
+  "email": "juan@juan.commm",
+  "password": "1234"
+}

@@ -6,23 +6,50 @@
     <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
-    <h1><%= message %></h1>
-    <h2>Estoy en EJS</h2>
-    <p>Bienvenido a nuestra aplicación</p>
+    <header>
+        <p>
+            Clínica
+        </p>
+        <button class="button">
+            Cerrar sesión
+        </button>
+    </header>
+    <main>
+        <h1><%= title %></h1>
+        <h2>
+            Lista de Turnos
+        </h2>
+        <p>
+            Todos los turnos programados con opciones de gestión
+        </p>
 
-    <% if (showFeatures) { %>
-        <h2>Características principales:</h2>
-        <ul>
-            <% features.forEach(function(feature) { %>
-                <li><%= feature %></li>
-            <% }); %>
-        </ul>
-    <% } else { %>
-        <p>No hay características disponibles.</p>
-    <% } %>
-
-    <%# Esto es un comentario (no se renderiza en el HTML) %>
-    
+        <table border="1" cellpadding="8" cellspacing="0">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Fecha</th>
+                    <th>Hora</th>
+                    <th>ID Paciente</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% if (turnos && turnos.length > 0) { %>
+                    <% turnos.forEach(function(turno) { %>
+                        <tr>
+                            <td><%= turno.id %></td>
+                            <td><%= turno.fecha %></td>
+                            <td><%= turno.hora %></td>
+                            <td><%= turno.id_paciente %></td>
+                        </tr>
+                    <% }); %>
+                <% } else { %>
+                    <tr>
+                        <td colspan="4">No hay turnos programados.</td>
+                    </tr>
+                <% } %>
+            </tbody>
+        </table>
+    </main>
     <footer>
         <p>© <%= new Date().getFullYear() %> Mi Aplicación</p>
     </footer>
