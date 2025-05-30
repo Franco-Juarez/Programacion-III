@@ -44,7 +44,7 @@ class PacientesController {
     try {
       const body = req.body;
 
-      if (!body.dni || !body.nombre || !body.apellido || !body.email || !body.password) {
+      if (!body.dni || !body.nombre || !body.apellido || !body.email) {
         throw new CustomError("Faltan datos en la petición", 400);
       }
 
@@ -90,7 +90,7 @@ class PacientesController {
 
       /* const pacientePorId = await updatePacienteModel(id, body); */
 
-      if (!body.dni || !body.nombre || !body.apellido || !body.email || !body.password) {
+      if (!body.dni || !body.nombre || !body.apellido || !body.email) {
         return res.status(400).json({ message: "Faltan datos en la peticion" });
       }
 
@@ -98,8 +98,7 @@ class PacientesController {
         dni: body.dni,
         email: body.email,
         nombre: body.nombre,
-        apellido: body.apellido,
-        password: body.password
+        apellido: body.apellido
       });
 
       if (!pacienteActualizado) {

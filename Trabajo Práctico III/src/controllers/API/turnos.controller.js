@@ -1,18 +1,22 @@
 const { getPacientePorIdModel } = require("../../models/sqlite/paciente.model");
-const { createTurnoModel, getTurnosPorPacienteModel, deleteTurnoModel } = require("../../models/sqlite/turno.model");
+const {
+  createTurnoModel,
+  getTurnosPorPacienteModel,
+  deleteTurnoModel,
+  getTurnosModel,
+} = require("../../models/sqlite/turno.model");
 const CustomError = require("../../utils/customError");
 
 class TurnosController {
   async create(req, res, next) {
     try {
       const body = req.body;
-        console.log(body)
+      console.log(body);
       if (!body.fecha || !body.hora || !body.idPaciente) {
         throw new CustomError("Faltan datos en la petición", 400);
       }
 
       const pacienteEncontrado = await getPacientePorIdModel(body.idPaciente);
-      
 
       if (!pacienteEncontrado) {
         throw new CustomError(
@@ -20,9 +24,9 @@ class TurnosController {
           404
         );
       }
-      
+
       const turno = await createTurnoModel(body);
-      
+
       return res.status(200).json(turno);
     } catch (error) {
       next(error);
@@ -52,8 +56,8 @@ class TurnosController {
     }
   }
 
-  async deleteTurno(req, res, next){
-    try{
+  async deleteTurno(req, res, next) {
+    try {
       const id = req.params.id;
 
       if (!id) {
@@ -63,18 +67,28 @@ class TurnosController {
       const turnoEliminado = await deleteTurnoModel(id);
 
       if (!turnoEliminado) {
-        throw new CustomError(
-          `No se encuentra el turno con el id ${id}`,
-          404
-        );
+        throw new CustomError(`No se encuentra el turno con el id ${id}`, 404);
       }
 
       res.status(200).json({ message: `Turno eliminado`, turnoEliminado });
-    }catch(error) {
+    } catch (error) {
+      next(error);
+    }
+  }
+
+  async getTurnos(req, res, next) {
+    try {
+      const turnos = await getTurnosModel();
+
+      if (!turnos || turnos.length === 0) {
+        throw new CustomError("No se encontraron turnos", 404);
+      }
+
+      return res.status(200).json(turnos);
+    } catch (error) {
       next(error);
     }
   }
 }
-
 
 module.exports = new TurnosController();

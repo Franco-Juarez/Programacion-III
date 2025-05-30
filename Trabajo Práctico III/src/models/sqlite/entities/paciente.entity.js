@@ -10,8 +10,7 @@ const Paciente = sequelize.define('Paciente', {
   dni: DataTypes.STRING,
   nombre: DataTypes.STRING,
   apellido: DataTypes.STRING,
-  email: DataTypes.STRING,
-  password: DataTypes.STRING
+  email: DataTypes.STRING
 });
 
 module.exports = Paciente;

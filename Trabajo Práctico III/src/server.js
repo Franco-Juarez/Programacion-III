@@ -1,12 +1,13 @@
 const  express = require('express');
 const  dotenv = require('dotenv');
 
-const rutaPacientes = require('./routes/pacientes.route.js')
+const rutaPacientes = require('./routes/pacientes.routes.js')
 const rutaTurnos = require("./routes/turnos.routes.js");
 const home = require('./routes/home.routes.js');
 
 const morgan = require('morgan');
 const errorHandler = require("./middlewares/error.middleware.js");
+const rutaAdmin = require('./routes/admin.routes.js');
 dotenv.config()
 
 class Server {
@@ -47,6 +48,7 @@ class Server {
   rutas () {
     this.app.use('/api/v1/pacientes', rutaPacientes)
     this.app.use('/api/v1/turnos', rutaTurnos)
+    this.app.use('/api/v1/admin', rutaAdmin)
     this.app.use('/',home)
  
     // aca van las otras rutas
