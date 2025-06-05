@@ -1,10 +1,14 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
-    <title><%= title %></title>
+    <title>
+        <%= title %>
+    </title>
     <meta charset="utf-8">
     <link rel="stylesheet" href="/css/style.css">
 </head>
+
 <body>
     <header>
         <p>
@@ -15,7 +19,9 @@
         </button>
     </header>
     <main>
-        <h1><%= title %></h1>
+        <h1>
+            <%= title %>
+        </h1>
         <h2>
             Lista de Turnos
         </h2>
@@ -26,27 +32,35 @@
         <table border="1" cellpadding="8" cellspacing="0">
             <thead>
                 <tr>
-                    <th>ID</th>
+                    <th>ID Turno</th>
                     <th>Fecha</th>
                     <th>Hora</th>
                     <th>ID Paciente</th>
                 </tr>
             </thead>
             <tbody>
-                <% if (turnos && turnos.length > 0) { %>
+                <% if (turnos && turnos.length> 0) { %>
                     <% turnos.forEach(function(turno) { %>
                         <tr>
-                            <td><%= turno.id %></td>
-                            <td><%= turno.fecha %></td>
-                            <td><%= turno.hora %></td>
-                            <td><%= turno.idPaciente %></td>
+                            <td>
+                                <%= turno.id %>
+                            </td>
+                            <td>
+                                <%= turno.fecha %>
+                            </td>
+                            <td>
+                                <%= turno.hora %>
+                            </td>
+                            <td>
+                                <%= turno.idPaciente %>
+                            </td>
                         </tr>
-                    <% }); %>
-                <% } else { %>
-                    <tr>
-                        <td colspan="4">No hay turnos programados.</td>
-                    </tr>
-                <% } %>
+                        <% }); %>
+                            <% } else { %>
+                                <tr>
+                                    <td colspan="4">No hay turnos programados.</td>
+                                </tr>
+                                <% } %>
             </tbody>
         </table>
     </main>
@@ -54,4 +68,5 @@
         <p>© <%= new Date().getFullYear() %> Mi Aplicación</p>
     </footer>
 </body>
+
 </html>
