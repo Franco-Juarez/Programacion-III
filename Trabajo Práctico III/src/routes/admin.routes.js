@@ -5,7 +5,8 @@ const turnosController = require('../controllers/API/turnos.controller.js');
 const rutaAdmin = Router();
 
 rutaAdmin.post('/login', adminController.login)
-rutaAdmin.post('/admin', adminController.create);
+rutaAdmin.post('/', adminController.create);
+rutaAdmin.get('/', adminController.getAdmins);
 
 rutaAdmin.post('/turnos', verifyTokenMiddleware, turnosController.create);
 rutaAdmin.get('/turnos', verifyTokenMiddleware, turnosController.getTurnos);

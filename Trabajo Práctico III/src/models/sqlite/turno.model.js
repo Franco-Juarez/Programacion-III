@@ -20,7 +20,7 @@ async function getTurnosPorPacienteModel(id) {
   return turnos;
 }
 
-async function deleteTurnoModel(id){
+async function deleteTurnoModel(id) {
   const turnoEliminado = await Turno.findByPk(id);
 
   if (!turnoEliminado) {
@@ -28,7 +28,7 @@ async function deleteTurnoModel(id){
   }
 
   await turnoEliminado.destroy();
-  return turnoEliminado
+  return turnoEliminado;
 }
 
 async function updateTurnoModel(id, data) {
@@ -46,12 +46,11 @@ async function getTurnoPorIdModel(id) {
   return await Turno.findByPk(id);
 }
 
-
 module.exports = {
   getTurnosModel,
   createTurnoModel,
   getTurnosPorPacienteModel,
   deleteTurnoModel,
   getTurnoPorIdModel,
-  updateTurnoModel
+  updateTurnoModel,
 };

@@ -27,7 +27,7 @@ async function validate(email, password) {
   const userFound = await findByEmail(email, password);
 
   if (!userFound || userFound.password == null) {
-    throw new Error("wrong email or password");
+    throw new Error("Email o contraseña incorrectos");
   }
 
   //payload, secreto, tiempo de expiracion
@@ -35,7 +35,7 @@ async function validate(email, password) {
     userId: userFound._id,
     userEmail: userFound.email,
   };
-  console.log("palabra secreta, pacientes model:", Config.secreteWord);
+  // console.log("palabra secreta, pacientes model:", Config.secreteWord);
 
   const token = jwt.sign(payload, Config.secreteWord, {
     expiresIn: Config.expiresIn,
@@ -45,5 +45,6 @@ async function validate(email, password) {
 
 module.exports = {
   createAdminModel,
+  getAdminModel,
   validate,
 };

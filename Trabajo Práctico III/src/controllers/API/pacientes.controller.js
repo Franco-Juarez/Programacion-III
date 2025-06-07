@@ -6,7 +6,7 @@ const {
   getPacientePorIdModel,
   updatePacienteModel,
   validate,
-  findByEmail
+  findByEmail,
 } = require("../../models/sqlite/paciente.model.js");
 
 class PacientesController {
@@ -20,6 +20,8 @@ class PacientesController {
       if (!token) {
         throw new CustomError("Credenciales inválidas", 401);
       }
+      //localstorage
+      localStorage.setItem("token", token);
 
       res.status(200).json(token);
     } catch (error) {
@@ -49,6 +51,13 @@ class PacientesController {
       }
 
       const info = await createPacienteModel(body);
+      if (!info) {
+        throw new CustomError(
+          `Ya existe un paciente con el dni ${body.dni}`,
+          400
+        );
+      }
+
       return res.status(200).json(info);
     } catch (error) {
       next(error);
@@ -98,7 +107,7 @@ class PacientesController {
         dni: body.dni,
         email: body.email,
         nombre: body.nombre,
-        apellido: body.apellido
+        apellido: body.apellido,
       });
 
       if (!pacienteActualizado) {

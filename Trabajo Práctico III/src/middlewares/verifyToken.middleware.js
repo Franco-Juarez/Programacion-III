@@ -1,8 +1,7 @@
 const jwt = require("jsonwebtoken");
 const Config = require("./../config/config.js");
 const verifyTokenMiddleware = (req, res, next) => {
-
-  const authHeader = req.header('authorization');
+  const authHeader = req.header("authorization");
   if (!authHeader) {
     return res
       .status(401)
@@ -13,14 +12,11 @@ const verifyTokenMiddleware = (req, res, next) => {
   try {
     //si no verifica salta una excepcion
 
-
     //const decoded = verifyToken(token,jwtConfig.JWT_SECRET);
     const decoded = jwt.verify(token, Config.secreteWord);
     //guardar en el usuario que se verificó ok
 
-
     req.user = decoded;
-
 
     next();
   } catch (error) {
@@ -29,5 +25,5 @@ const verifyTokenMiddleware = (req, res, next) => {
   }
 };
 module.exports = {
-  verifyTokenMiddleware
-}
+  verifyTokenMiddleware,
+};

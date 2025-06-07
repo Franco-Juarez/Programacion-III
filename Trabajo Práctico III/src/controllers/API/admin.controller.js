@@ -1,4 +1,8 @@
-const { validate, createAdminModel } = require("../../models/sqlite/admin.model");
+const {
+  validate,
+  createAdminModel,
+  getAdminModel,
+} = require("../../models/sqlite/admin.model");
 const CustomError = require("../../utils/customError");
 
 class AdminController {
@@ -23,12 +27,31 @@ class AdminController {
     try {
       const body = req.body;
 
-      if (!body.dni || !body.nombre || !body.apellido || !body.email || !body.password) {
+      if (
+        !body.dni ||
+        !body.nombre ||
+        !body.apellido ||
+        !body.email ||
+        !body.password
+      ) {
         throw new CustomError("Faltan datos en la petición", 400);
       }
 
       const info = await createAdminModel(body);
       return res.status(200).json(info);
+    } catch (error) {
+      next(error);
+    }
+  }
+
+  async getAdmins(req, res, next) {
+    try {
+      const admins = await getAdminModel();
+
+      if (!admins || admins.length === 0) {
+        throw new CustomError("No hay administradores registrados", 404);
+      }
+      return res.status(200).json(admins);
     } catch (error) {
       next(error);
     }

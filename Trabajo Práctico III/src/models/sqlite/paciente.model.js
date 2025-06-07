@@ -1,6 +1,6 @@
 const { Paciente, Turno } = require("../sqlite/entities/index.js");
-const Config = require("../../config/config.js")
-const jwt = require("jsonwebtoken")
+const Config = require("../../config/config.js");
+const jwt = require("jsonwebtoken");
 
 async function getPacientesModel() {
   const users = await Paciente.findAll();
@@ -18,6 +18,15 @@ async function getPacientePorIdModel(id) {
 }
 
 async function createPacienteModel(paciente) {
+  const pacienteExiste = await Paciente.findOne({
+    where: {
+      dni: paciente.dni,
+    },
+  });
+  if (pacienteExiste) {
+    return null;
+  }
+
   const info = await Paciente.create(paciente);
   return info;
 }

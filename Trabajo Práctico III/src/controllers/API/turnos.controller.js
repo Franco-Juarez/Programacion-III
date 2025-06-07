@@ -94,37 +94,44 @@ class TurnosController {
 
   async update(req, res, next) {
     //testeo
-    console.log('Params:', req.params);
-    console.log('Body:', req.body);
-
+    console.log("Params:", req.params);
+    console.log("Body:", req.body);
 
     try {
       const id = parseInt(req.params.id);
       const { fecha, hora, idPaciente } = req.body;
-  
+
       if (!fecha || !hora || !idPaciente) {
         throw new CustomError("Faltan datos en la petición", 400);
       }
-  
+
       const turnoExistente = await getTurnoPorIdModel(id);
       if (!turnoExistente) {
         throw new CustomError(`No existe un turno con el id ${id}`, 404);
       }
-  
+
       const paciente = await getPacientePorIdModel(idPaciente);
       if (!paciente) {
-        throw new CustomError(`No existe un paciente con el id ${idPaciente}`, 404);
+        throw new CustomError(
+          `No existe un paciente con el id ${idPaciente}`,
+          404
+        );
       }
-  
-      const turnoActualizado = await updateTurnoModel(id, { fecha, hora, idPaciente });
-  
-      return res.status(200).json({ mensaje: "Turno actualizado", turno: turnoActualizado });
+
+      const turnoActualizado = await updateTurnoModel(id, {
+        fecha,
+        hora,
+        idPaciente,
+      });
+
+      return res
+        .status(200)
+        .json({ mensaje: "Turno actualizado", turno: turnoActualizado });
     } catch (error) {
-      console.error("Error en update Turno:", error);  // <-- agregá esta línea
+      console.error("Error en update Turno:", error); // <-- agregá esta línea
       next(error);
     }
   }
-  
 }
 
 module.exports = new TurnosController();

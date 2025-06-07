@@ -3,7 +3,7 @@
 
 <head>
     <title>
-        <%= title %>
+        Gestión de Turnos - Clínica
     </title>
     <meta charset="utf-8">
     <link rel="stylesheet" href="/css/style.css">
@@ -20,7 +20,7 @@
     </header>
     <main>
         <h1>
-            <%= title %>
+            Sistema de Gestión de Turnos
         </h1>
         <h2>
             Lista de Turnos
@@ -59,6 +59,44 @@
                             <% } else { %>
                                 <tr>
                                     <td colspan="4">No hay turnos programados.</td>
+                                </tr>
+                                <% } %>
+            </tbody>
+        </table>
+        <h2>
+            Lista de Pacientes
+        </h2>
+
+        <table border="1" cellpadding="8" cellspacing="0">
+            <thead>
+                <tr>
+                    <th>ID Paciente</th>
+                    <th>Nombre</th>
+                    <th>Apellido</th>
+                    <th>DNI</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% if (pacientes && pacientes.length> 0) { %>
+                    <% pacientes.forEach(function(paciente) { %>
+                        <tr>
+                            <td>
+                                <%= paciente.id %>
+                            </td>
+                            <td>
+                                <%= paciente.nombre %>
+                            </td>
+                            <td>
+                                <%= paciente.apellido %>
+                            </td>
+                            <td>
+                                <%= paciente.dni %>
+                            </td>
+                        </tr>
+                        <% }); %>
+                            <% } else { %>
+                                <tr>
+                                    <td colspan="4">No hay pacientes registrados.</td>
                                 </tr>
                                 <% } %>
             </tbody>
