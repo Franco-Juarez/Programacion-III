@@ -8,7 +8,7 @@ Bienvenidos a nuestra aplicación backend para la gestión de turnos médicos en
 
 1. **Clonar el repositorio**
    ```sh
-   git clone https://github.com/santozzi/practico3progra3.git
+   git clone https://github.com/Franco-Juarez/Programacion-III.git
    cd "Trabajo Práctico III"
    ```
 
