@@ -13,7 +13,6 @@ class TurnosController {
   async create(req, res, next) {
     try {
       const body = req.body;
-      console.log(body);
       if (!body.fecha || !body.hora || !body.idPaciente) {
         throw new CustomError("Faltan datos en la petición", 400);
       }
@@ -93,9 +92,6 @@ class TurnosController {
   }
 
   async update(req, res, next) {
-    //testeo
-    console.log("Params:", req.params);
-    console.log("Body:", req.body);
 
     try {
       const id = parseInt(req.params.id);

@@ -1,30 +1,50 @@
+### Lógica de turnos médicos
+
 ## Login de paciente
 POST http://localhost:3000/api/v1/pacientes/login
 Content-Type: application/json
 
 {
-  "email": "juan@juan.commm",
-  "password": "1234"
+  "email": "franmastan@gmail.com",
+  "password": "1234521"
 }
+
+### Listar todos los turnos (usar el token del login anterior)
+GET http://localhost:3000/api/v1/turnos
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyRW1haWwiOiJmcmFubWFzdGFuQGdtYWlsLmNvbSIsImlhdCI6MTc0OTI5ODEwNCwiZXhwIjoxNzUxMzcxNzA0fQ.ihuqw9238pmNs552Pfzt5nXC6ZmKIs1tPkTbedTM9Ho
+
+
+### Consultar turnos de un paciente
+GET http://localhost:3000/api/v1/turnos/1
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyRW1haWwiOiJmcmFubWFzdGFuQGdtYWlsLmNvbSIsImlhdCI6MTc0OTI5ODEwNCwiZXhwIjoxNzUxMzcxNzA0fQ.ihuqw9238pmNs552Pfzt5nXC6ZmKIs1tPkTbedTM9Ho
+
 
 ### Crear un nuevo turno (usar el token del login anterior)
 POST http://localhost:3000/api/v1/turnos
 Content-Type: application/json
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyRW1haWwiOiJqdWFuQGp1YW4uY29tbW0iLCJpYXQiOjE3NDkxMjE0NjEsImV4cCI6MTc1MTE5NTA2MX0.i04YZK8vezNDcIrRPc5ATAU9D3DG4KhWRdvOVVN0OsA
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyRW1haWwiOiJmcmFubWFzdGFuQGdtYWlsLmNvbSIsImlhdCI6MTc0OTI5ODEwNCwiZXhwIjoxNzUxMzcxNzA0fQ.ihuqw9238pmNs552Pfzt5nXC6ZmKIs1tPkTbedTM9Ho
 
 {
   "fecha": "2024-03-20",
   "hora": "14:30",
-  "idPaciente": 1
+  "idPaciente": 3
 }
 
-### Consultar turnos de un paciente
-GET http://localhost:3000/api/v1/turnos/1
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyRW1haWwiOiJqdWFuQGp1YW4uY29tbW0iLCJpYXQiOjE3NDkxMjE0NjEsImV4cCI6MTc1MTE5NTA2MX0.i04YZK8vezNDcIrRPc5ATAU9D3DG4KhWRdvOVVN0OsA
+### Actualizar un turno con el id del paciente
+PUT http://localhost:3000/api/v1/turnos/12
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyRW1haWwiOiJmcmFubWFzdGFuQGdtYWlsLmNvbSIsImlhdCI6MTc0OTI5ODEwNCwiZXhwIjoxNzUxMzcxNzA0fQ.ihuqw9238pmNs552Pfzt5nXC6ZmKIs1tPkTbedTM9Ho
+
+{
+  "fecha": "2024-03-21",
+  "hora": "15:00",
+  "idPaciente": 3
+}
+
 
 ### Cancelar un turno
-DELETE http://localhost:3000/api/v1/turnos/1
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyRW1haWwiOiJqdWFuQGp1YW4uY29tbW0iLCJpYXQiOjE3NDkxMjE0NjEsImV4cCI6MTc1MTE5NTA2MX0.i04YZK8vezNDcIrRPc5ATAU9D3DG4KhWRdvOVVN0OsA
+DELETE http://localhost:3000/api/v1/turnos/2
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyRW1haWwiOiJmcmFubWFzdGFuQGdtYWlsLmNvbSIsImlhdCI6MTc0OTI5ODEwNCwiZXhwIjoxNzUxMzcxNzA0fQ.ihuqw9238pmNs552Pfzt5nXC6ZmKIs1tPkTbedTM9Ho
 
 
 
@@ -60,4 +80,44 @@ Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyRW1haWwiOiJhZG1pbkBh
 
 ### Cancelar un turno (como admin)
 DELETE http://localhost:3000/api/v1/admin/turnos/7
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyRW1haWwiOiJhZG1pbkBhZG1pbi5jb20iLCJpYXQiOjE3NDkxMjgyNjMsImV4cCI6MTc1MTIwMTg2M30.0qr9M1LqJZ1dqziYw96dMO-9aO-smrE1oFrYM8Kx2Fw
+
+
+## Lógica de pacientes
+### Crear un nuevo paciente
+POST http://localhost:3000/api/v1/pacientes
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyRW1haWwiOiJhZG1pbkBhZG1pbi5jb20iLCJpYXQiOjE3NDkxMjgyNjMsImV4cCI6MTc1MTIwMTg2M30.0qr9M1LqJZ1dqziYw96dMO-9aO-smrE1oFrYM8Kx2Fw
+
+{
+  "dni": "37025550",          
+  "nombre": "Roberto",
+  "apellido": "Solari",
+  "email": "siesmail@gmail.com",
+  "password": "1232556"
+}
+
+### Listar todos los pacientes
+GET http://localhost:3000/api/v1/pacientes
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyRW1haWwiOiJhZG1pbkBhZG1pbi5jb20iLCJpYXQiOjE3NDkxMjgyNjMsImV4cCI6MTc1MTIwMTg2M30.0qr9M1LqJZ1dqziYw96dMO-9aO-smrE1oFrYM8Kx2Fw
+
+### Consultar paciente por ID
+GET http://localhost:3000/api/v1/pacientes/1
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyRW1haWwiOiJhZG1pbkBhZG1pbi5jb20iLCJpYXQiOjE3NDkxMjgyNjMsImV4cCI6MTc1MTIwMTg2M30.0qr9M1LqJZ1dqziYw96dMO-9aO-smrE1oFrYM8Kx2Fw
+
+### Actualizar un paciente
+PUT http://localhost:3000/api/v1/pacientes/1
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyRW1haWwiOiJhZG1pbkBhZG1pbi5jb20iLCJpYXQiOjE3NDkxMjgyNjMsImV4cCI6MTc1MTIwMTg2M30.0qr9M1LqJZ1dqziYw96dMO-9aO-smrE1oFrYM8Kx2Fw
+
+{
+  "dni": "12345678",
+  "nombre": "Juan",
+  "apellido": "Perez",
+  "email": "juanperez@gmail.com",
+  "password": "12345678"
+}
+
+### Eliminar un paciente
+DELETE http://localhost:3000/api/v1/pacientes/10
 Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyRW1haWwiOiJhZG1pbkBhZG1pbi5jb20iLCJpYXQiOjE3NDkxMjgyNjMsImV4cCI6MTc1MTIwMTg2M30.0qr9M1LqJZ1dqziYw96dMO-9aO-smrE1oFrYM8Kx2Fw

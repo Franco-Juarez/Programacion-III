@@ -21,7 +21,7 @@ class PacientesController {
         throw new CustomError("Credenciales inválidas", 401);
       }
       //localstorage
-      localStorage.setItem("token", token);
+      // localStorage.setItem("token", token);
 
       res.status(200).json(token);
     } catch (error) {

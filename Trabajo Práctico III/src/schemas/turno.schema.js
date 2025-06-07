@@ -11,9 +11,7 @@ const turnoSchema = {
     idPaciente: Joi.number()
       .integer()
       .required()
-      .messages({
-        "number.base": "El id del paciente debe ser un numero entero",
-      }),
+      .messages({ "number.base": "El id del paciente debe ser un numero entero" }),
   }),
 
   update: Joi.object({
@@ -26,9 +24,7 @@ const turnoSchema = {
     idPaciente: Joi.number()
       .integer()
       .required()
-      .messages({
-        "number.base": "El id del paciente debe ser un numero entero",
-      }),
+      .messages({ "number.base": "El id del paciente debe ser un numero entero" }),
   }),
 
   idParam: Joi.object({

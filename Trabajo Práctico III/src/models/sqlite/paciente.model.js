@@ -81,7 +81,6 @@ async function validate(email, password) {
     userId: userFound._id,
     userEmail: userFound.email,
   };
-  console.log("palabra secreta, pacientes model:", Config.secreteWord);
 
   const token = jwt.sign(payload, Config.secreteWord, {
     expiresIn: Config.expiresIn,
