@@ -253,7 +253,7 @@ src/
 ### 7. Obtener turnos
 ![Get turnos](/Programacion-III/Trabajo%20Práctico%20III/src/utils/images/06_get_turnos.png)
 
-### 8. Obtener turnos v2
+### 8. Obtener turnos (Visual)
 ![Get turnos v2](/Programacion-III/Trabajo%20Práctico%20III/src/utils/images/07_get_turnos_2.png)
 
 ### 9. Obtener turno para paciente
@@ -283,7 +283,7 @@ src/
 ### 17. Obtener paciente por ID
 ![Get paciente por ID](/Programacion-III/Trabajo%20Práctico%20III/src/utils/images/16_get_paciente_por_ID.png)
 
-### 18. Obtener paciente por ID (versión B)
+### 18. Obtener paciente por ID (Visual)
 ![Get paciente por ID B](/Programacion-III/Trabajo%20Práctico%20III/src/utils/images/16b_get_paciente_por_ID.png)
 
 ### 19. Modificar paciente (PUT)
@@ -294,9 +294,6 @@ src/
 
 ### 21. Error: paciente no existe
 ![Error paciente no existe](/Programacion-III/Trabajo%20Práctico%20III/src/utils/images/18_error_put_paciente_no_existe.png)
-
-### 22. Error: datos incompletos
-![Error sin ingreso datos](/Programacion-III/Trabajo%20Práctico%20III/src/utils/images/19_error_put_paciente_sin_ingreso_datos.png)
 
 ---
 
