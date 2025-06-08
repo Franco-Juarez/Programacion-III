@@ -4,7 +4,10 @@ const adminController = require('../controllers/API/admin.controller.js');
 const turnosController = require('../controllers/API/turnos.controller.js');
 const rutaAdmin = Router();
 
-rutaAdmin.post('/login', adminController.login)
+const validate = require('../middlewares/validacionTurno.middleware.js');
+const adminSchema = require('../schemas/admin.schema.js');
+
+rutaAdmin.post('/login', validate(adminSchema.login, "body"),adminController.login)
 rutaAdmin.post('/', adminController.create);
 rutaAdmin.get('/', adminController.getAdmins);
 
