@@ -9,7 +9,7 @@ const adminSchema = require('../schemas/admin.schema.js');
 
 rutaAdmin.post('/login', validate(adminSchema.login, "body"),adminController.login)
 rutaAdmin.post('/', adminController.create);
-rutaAdmin.get('/', adminController.getAdmins);
+rutaAdmin.get('/', verifyTokenMiddleware,adminController.getAdmins);
 
 rutaAdmin.post('/turnos', verifyTokenMiddleware, turnosController.create);
 rutaAdmin.get('/turnos', verifyTokenMiddleware, turnosController.getTurnos);
