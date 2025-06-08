@@ -232,68 +232,68 @@ src/
 
 ## Capturas de pantalla
 ### 1. Clonar repositorio e instalacion
-![Clonar Repo](/Programacion-III//Trabajo%20Práctico%20III//src/utils/images/01_Clonado_GIT_npm_install.png)
+![Clonar Repo](src/utils/images/01_Clonado_GIT_npm_install.png)
 
 ### 2. Iniciar el servidor
-![Iniciar servidor](/Programacion-III/Trabajo%20Práctico%20III//src/utils/images/02_run_dev.png)
+![Iniciar servidor](src/utils/images/02_run_dev.png)
 
 
 ### 3. Vista de turnos
-![Vista de turnos](/Programacion-III/Trabajo%20Práctico%20III/src/utils/images/03_visual_turnos.png)
+![Vista de turnos](src/utils/images/03_visual_turnos.png)
 
 ### 4. Obtener turno por paciente
-![Get turno por paciente](/Programacion-III/Trabajo%20Práctico%20III/src/utils/images/04_get_turno_por_paciente.png)
+![Get turno por paciente](src/utils/images/04_get_turno_por_paciente.png)
 
 ### 5. Visualización de pacientes
-![Visual pacientes](/Programacion-III/Trabajo%20Práctico%20III/src/utils/images/04_visual_pacientes.png)
+![Visual pacientes](src/utils/images/04_visual_pacientes.png)
 
 ### 6. Token de administrador
-![Token admin](/Programacion-III/Trabajo%20Práctico%20III/src/utils/images/05_post_token_admin.png)
+![Token admin](src/utils/images/05_post_token_admin.png)
 
 ### 7. Obtener turnos
-![Get turnos](/Programacion-III/Trabajo%20Práctico%20III/src/utils/images/06_get_turnos.png)
+![Get turnos](src/utils/images/06_get_turnos.png)
 
 ### 8. Obtener turnos (Visual)
-![Get turnos v2](/Programacion-III/Trabajo%20Práctico%20III/src/utils/images/07_get_turnos_2.png)
+![Get turnos v2](src/utils/images/07_get_turnos_2.png)
 
 ### 9. Obtener turno para paciente
-![Post turno paciente](/Programacion-III/Trabajo%20Práctico%20III/src/utils/images/08_post_turno_para_paciente.png)
+![Post turno paciente](src/utils/images/08_post_turno_para_paciente.png)
 
 ### 10. Obtener turnos nuevo por paciente
-![Get turnos nuevo](/Programacion-III/Trabajo%20Práctico%20III/src/utils/images/09_get_turnos_nuevo_por_paciente.png)
+![Get turnos nuevo](src/utils/images/09_get_turnos_nuevo_por_paciente.png)
 
 ### 11. Eliminar turno
-![Delete turno](/Programacion-III/Trabajo%20Práctico%20III/src/utils/images/10_delete_turno.png)
+![Delete turno](src/utils/images/10_delete_turno.png)
 
 ### 12. Modificar turno (PUT)
-![PUT turno modificado](/Programacion-III/Trabajo%20Práctico%20III/src/utils/images/11_put_turno_modificado.png)
+![PUT turno modificado](src/utils/images/11_put_turno_modificado.png)
 
 ### 13. Modificar turno (GET)
-![GET turno modificado](/Programacion-III/Trabajo%20Práctico%20III/src/utils/images/12_get_turno_modificado.png)
+![GET turno modificado](src/utils/images/12_get_turno_modificado.png)
 
 ### 14. Obtener pacientes
-![Get pacientes](/Programacion-III/Trabajo%20Práctico%20III/src/utils/images/13_get_pacientes.png)
+![Get pacientes](src/utils/images/13_get_pacientes.png)
 
 ### 15. Cargar paciente
-![Post paciente cargar](/Programacion-III/Trabajo%20Práctico%20III/src/utils/images/14_post_paciente_cargar.png)
+![Post paciente cargar](src/utils/images/14_post_paciente_cargar.png)
 
 ### 16. Obtener paciente nuevo
-![Get paciente nuevo](/Programacion-III/Trabajo%20Práctico%20III/src/utils/images/15_get_paciente_nuevo.png)
+![Get paciente nuevo](src/utils/images/15_get_paciente_nuevo.png)
 
 ### 17. Obtener paciente por ID
-![Get paciente por ID](/Programacion-III/Trabajo%20Práctico%20III/src/utils/images/16_get_paciente_por_ID.png)
+![Get paciente por ID](src/utils/images/16_get_paciente_por_ID.png)
 
 ### 18. Obtener paciente por ID (Visual)
-![Get paciente por ID B](/Programacion-III/Trabajo%20Práctico%20III/src/utils/images/16b_get_paciente_por_ID.png)
+![Get paciente por ID B](src/utils/images/16b_get_paciente_por_ID.png)
 
 ### 19. Modificar paciente (PUT)
-![PUT paciente modificado](/Programacion-III/Trabajo%20Práctico%20III/src/utils/images/17_put_paciente_modificado.png)
+![PUT paciente modificado](src/utils/images/17_put_paciente_modificado.png)
 
 ### 20. Error al modificar paciente
-![Error PUT paciente](/Programacion-III/Trabajo%20Práctico%20III/src/utils/images/17b_put_paciente_modificado.png)
+![Error PUT paciente](src/utils/images/17b_put_paciente_modificado.png)
 
 ### 21. Error: paciente no existe
-![Error paciente no existe](/Programacion-III/Trabajo%20Práctico%20III/src/utils/images/18_error_put_paciente_no_existe.png)
+![Error paciente no existe](src/utils/images/18_error_put_paciente_no_existe.png)
 
 ---
 
