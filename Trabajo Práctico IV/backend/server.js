@@ -1,10 +1,12 @@
 const express = require("express");
 const rutaPersonas = require("./routes/personas.routes");
+const cors = require("cors");
 class Server {
   constructor() {
     this.app = express();
     this.port = 3000;
     this.app.use(express.json());
+    this.app.use(cors());
     this.rutas();
   }
 

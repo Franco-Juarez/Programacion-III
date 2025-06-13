@@ -36,6 +36,28 @@ class PersonasModel {
         edad: 25,
         email: "julialvarez@gmail.com",
       },
+      {
+        id: 6,
+        nombre: "Karim",
+        apellido: "Benzema",
+        edad: 35,
+        email: "karim@goles.com",
+      },
+      {
+        id: 7,
+        nombre: "Zinedine",
+        apellido: "Zidane",
+        edad: 48,
+        email: "zidan@cabezaso",
+      }
+      ,
+      {
+        id: 8,
+        nombre: "Diego",
+        apellido: "Maradona",
+        edad: 60,
+        email: "eldiego@gmail.com",
+      },
     ];
   }
   getAll() {
