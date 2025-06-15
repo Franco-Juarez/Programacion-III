@@ -5,6 +5,10 @@
   text-align: center;
 }
 
+h1 {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
 .tarjetas-container {
   display: grid;
   grid-template-columns: repeat(4, minmax(250px, 2fr));
@@ -14,39 +18,47 @@
 }
 
 .persona-card {
-  background-color: #80cf75;
-  border-radius: 1rem;
-  padding: 1rem;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   padding: 2rem;
   box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 2px;
   animation: fadeIn 0.5s ease-in-out;
+  border-radius: 0.5rem;
+  background-color: #ffffff;
+  transition-property: all;
+  transition-duration: 300ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .persona-card:hover {
-  background-color: #6fbf66;
-  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+  transform: translateY(-5px);
 }
 
 .persona-card h2 {
   margin: 0;
-  font-size: 1.5rem;
-  color: #FAFAFA;
+  font-size: 1.2rem;
+  color: #1E293E;
   text-align: left;
+  margin-bottom: 1rem;
 }
 
 .persona-card p {
   margin: 0;
   font-size: 1rem;
-  color: #FAFAFA;
+  color: #475569;
+}
+
+.persona-info {
+  display: flex;
+  gap: 0.5rem;
 }
 
 @keyframes fadeIn {
   from {
     opacity: 0;
   }
+
   to {
     opacity: 1;
   }
@@ -56,13 +68,8 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
-  }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
   }
 }

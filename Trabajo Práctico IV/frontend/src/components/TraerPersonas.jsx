@@ -1,10 +1,10 @@
 import { useEffect, useState } from 'react'
-import { ListaTarjetas } from './ListaTarjetas'
+import ListaTarjetas from './ListaTarjetas.jsx'
 
-export const TraerPersonas = () => {
+const TraerPersonas = () => {
 
-    const [personas, setPersonas] = useState([])
-    
+  const [personas, setPersonas] = useState([])
+
   useEffect(() => {
     const fetchPersonas = async () => {
       try {
@@ -21,9 +21,9 @@ export const TraerPersonas = () => {
     fetchPersonas()
   }, [])
 
-    return (
-        <ListaTarjetas personas={personas} />
-    )
+  return (
+    <ListaTarjetas personas={personas} />
+  )
 }
 
 export default TraerPersonas;

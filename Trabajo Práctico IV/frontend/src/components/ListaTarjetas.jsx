@@ -1,6 +1,6 @@
 import TarjetaPersona from "./TarjetaPersona";
 
-export const ListaTarjetas =  ({personas}) => {
+const ListaTarjetas = ({ personas }) => {
 
     return (
         <div className="tarjetas-container">

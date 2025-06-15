@@ -1,10 +1,10 @@
 import './App.css'
-import { TraerPersonas } from './components/TraerPersonas'
+import TraerPersonas from './components/TraerPersonas'
 
 function App() {
 
-  
-    return (
+
+  return (
     <>
       <h1>Listado de jugadores</h1>
       <div>
