@@ -6,7 +6,7 @@ Bienvenidos a nuestra aplicación backend para la gestión de turnos médicos en
 
 ## Instalación
 
-1. **Clonar el repositorio**
+1. **Clonar este repositorio**
    ```sh
    git clone https://github.com/Franco-Juarez/Programacion-III.git
    cd "Trabajo Práctico III"
