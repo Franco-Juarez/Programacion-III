@@ -1,6 +1,6 @@
 # Trabajo Práctico IV
 
-Este proyecto está dividido en dos partes: **backend** y **frontend**. A continuación vas a encontrar los pasos para clonar el repositorio y ejecutar ambas aplicaciones. En el backend hay un proyecto de Express.js y en en frontend otro de React con Vite. 
+Este proyecto está dividido en dos partes: **backend** y **frontend**. A continuación vas a encontrar los pasos para clonar el repositorio y ejecutar ambas aplicaciones. En el backend hay un proyecto de Express.js y en el frontend otro de React con Vite. 
 
 ---
 

@@ -48,7 +48,7 @@ class PersonasModel {
         nombre: "Zinedine",
         apellido: "Zidane",
         edad: 48,
-        email: "zidan@cabezaso",
+        email: "zidan@cabezazo.com",
       }
       ,
       {
