@@ -1,0 +1,1 @@
+const {Libro, Comentario} = require("./entities/index");
