@@ -7,5 +7,6 @@ const rutaLibros = Router();
 rutaLibros.get('/', librosController.getLibros)
 rutaLibros.post('/', librosController.createLibro);
 rutaLibros.get('/:id', librosController.getLibroById);
+rutaLibros.put('/:id', librosController.updateLibro);
 
 module.exports = rutaLibros;
