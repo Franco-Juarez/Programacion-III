@@ -1,4 +1,4 @@
-const { Libro, Comentario } = require("../models/entities/index");
+const { Libro, Comentario } = require("../models");
 
 async function getLibrosModel() {
   const libros = await Libro.findAll();
@@ -10,6 +10,7 @@ async function getLibroIdModel(id) {
     include: {
       model: Comentario,
       as: "comentarios",
+      required: false,
     },
   });
   if (!libro) return null;
@@ -18,7 +19,6 @@ async function getLibroIdModel(id) {
 }
 
 async function createLibroModel(libro) {
- 
   const nuevoLibro = await Libro.create(libro);
   return nuevoLibro;
 }

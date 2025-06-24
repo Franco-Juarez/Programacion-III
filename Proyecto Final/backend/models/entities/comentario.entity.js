@@ -1,4 +1,4 @@
-const { DataTypes } = require("sequelize");
+/* const { DataTypes } = require("sequelize");
 const { sequelize } = require("../index");
 
 const Comentario = sequelize.define(
@@ -29,3 +29,4 @@ const Comentario = sequelize.define(
 );
 
 module.exports = Comentario;
+ */

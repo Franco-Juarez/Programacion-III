@@ -1,4 +1,4 @@
-const Libro = require("./libro.entity");
+/* const Libro = require("./libro.entity");
 const Comentario = require("./comentario.entity");
 
 Libro.hasMany(Comentario, {
@@ -15,3 +15,4 @@ module.exports = {
   Libro,
   Comentario,
 };
+ */

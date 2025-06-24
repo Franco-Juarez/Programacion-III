@@ -1,4 +1,4 @@
-const { DataTypes } = require("sequelize");
+/* const { DataTypes } = require("sequelize");
 const { sequelize } = require("../index");
 
 const Libro = sequelize.define(
@@ -42,7 +42,7 @@ const Libro = sequelize.define(
         min: 1,
         max: 5,
       },
-    }
+    },
   },
   {
     tableName: "libros",
@@ -51,3 +51,4 @@ const Libro = sequelize.define(
 );
 
 module.exports = Libro;
+ */
