@@ -8,6 +8,7 @@ require("dotenv").config();
 const { sequelize } = require("./models");
 
 const rutaLibros = require("./routes/libros.routes");
+const rutaComentarios = require("./routes/comentarios.routes.js");
 const routes = require("./routes");
 
 const app = express();
@@ -36,6 +37,7 @@ if (process.env.NODE_ENV !== "test") {
 // Rutas
 app.use("/api", routes);
 app.use("/api/libros", rutaLibros);
+app.use("/api/comentarios", rutaComentarios);
 
 // Health check en la raíz
 app.get("/health", (req, res) => {
@@ -46,6 +48,7 @@ app.get("/health", (req, res) => {
   });
 });
 
+// Deshabilite esto para tener nuestro propio manejo de errores
 // Manejo de errores
 // app.use((err, req, res, next) => {
 //   console.error(err.stack);

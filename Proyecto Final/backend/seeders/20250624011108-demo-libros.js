@@ -37,7 +37,31 @@ module.exports = {
         calificacion: null,
         createdAt: new Date(),
         updatedAt: new Date(),
-      }
+      },
+      {
+        titulo: "Cien años de soledad",
+        autor: "Gabriel García Márquez",
+        anioPublicacion: 1967,
+        genero: "Realismo mágico",
+        descripcion:
+          "Cien años de soledad narra la historia de la familia Buendía a lo largo de siete generaciones en el pueblo ficticio de Macondo. Fundado por José Arcadio Buendía y Úrsula Iguarán, la novela explora temas como el amor, la soledad, la guerra y el destino. A medida que los Buendía enfrentan tragedias y eventos sobrenaturales, la historia se convierte en una reflexión sobre el tiempo cíclico y la inevitabilidad del destino.",
+        estado: "unread",
+        calificacion: null,
+        createdAt: new Date(),
+        updatedAt: new Date(),
+      },
+      {
+        titulo: "Orgullo y prejuicio",
+        autor: "Jane Austen",
+        anioPublicacion: 1813,
+        genero: "Romance",
+        descripcion:
+          "Orgullo y prejuicio es una novela romántica que sigue la vida de Elizabeth Bennet, una joven inteligente y decidida, mientras navega por las complejidades del amor, el matrimonio y las expectativas sociales en la Inglaterra del siglo XIX. A través de su relación con el orgulloso pero enigmático Sr. Darcy, Elizabeth desafía las normas sociales y descubre la importancia de la comprensión mutua y el respeto en una relación.",
+        estado: "unread",
+        calificacion: null,
+        createdAt: new Date(),
+        updatedAt: new Date(),
+      },
     ]);
   },
   async down(queryInterface, Sequelize) {

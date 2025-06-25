@@ -1,9 +1,4 @@
-const {
-  createLibroModel,
-  getLibrosModel,
-  getLibroIdModel,
-  updateLibroModel,
-} = require("../models/libros.model");
+const libroService = require("../services/libros.service");
 const CustomError = require("../utils/custom-error");
 
 class LibrosController {
@@ -19,7 +14,7 @@ class LibrosController {
       ) {
         throw new CustomError("Faltan datos obligatorios", 400);
       }
-      const nuevoLibro = await createLibroModel(libro);
+      const nuevoLibro = await libroService.createLibro(libro);
       res.status(201).json(nuevoLibro);
     } catch (error) {
       next(error);
@@ -28,8 +23,7 @@ class LibrosController {
 
   async getLibros(req, res, next) {
     try {
-      const libros = await getLibrosModel();
-
+      const libros = await libroService.getAllLibros();
       res.status(200).json(libros);
     } catch (error) {
       next(error);
@@ -39,7 +33,7 @@ class LibrosController {
   async getLibroById(req, res, next) {
     try {
       const id = parseInt(req.params.id);
-      const libro = await getLibroIdModel(id);
+      const libro = await libroService.getLibroById(id);
       if (!libro) {
         throw new CustomError(`Libro no encontrado con el id ${id}`, 404);
       }
@@ -64,13 +58,13 @@ class LibrosController {
         throw new CustomError("Faltan datos obligatorios", 400);
       }
 
-      const libroExistente = await getLibroIdModel(id);
+      const libroExistente = await libroService.getLibroById(id);
 
       if (!libroExistente) {
         throw new CustomError(`No existe un libro con el id ${id}`, 404);
       }
 
-      const libroActualizado = await updateLibroModel(id, libro);
+      const libroActualizado = await libroService.updateLibro(id, libro);
       res.status(200).json({ mensaje: "Libro actualizado", libroActualizado });
     } catch (error) {
       next(error);
