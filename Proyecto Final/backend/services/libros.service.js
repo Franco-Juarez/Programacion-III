@@ -29,9 +29,10 @@ class LibroService {
     return libro;
   }
 
-  async updateLibro(id, libro) {
+  async updateLibro(id, datosActualizados) {
     const libroExistente = await Libro.findByPk(id);
-    const libroActualizado = await libroExistente.update(libro);
+    
+    const libroActualizado = await libroExistente.update(datosActualizados);
     return libroActualizado;
   }
 }
