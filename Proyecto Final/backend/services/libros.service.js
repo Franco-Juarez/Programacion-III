@@ -1,9 +1,10 @@
 const { Libro, Comentario } = require("../models");
 
 class LibroService {
-  async getAllLibros() {
-    const libros = await Libro.findAll();
-    return libros;
+  async getAllLibros(filtros = {}) {
+    return await Libro.findAll({
+      where: filtros
+    });
   }
 
   async getLibroById(id) {
