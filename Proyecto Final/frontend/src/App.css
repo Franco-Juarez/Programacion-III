@@ -9,6 +9,10 @@
   --card-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
 }
 
+button {
+  cursor: pointer;
+}
+
 .container {
   display: flex;
   flex-direction: column;
@@ -58,7 +62,7 @@
 
 .books-grid {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   gap: 1rem;
   padding: 1rem 0;
 }
@@ -71,6 +75,11 @@
   border-radius: 10px;
   background-color: var(--background);
   box-shadow: var(--card-shadow);
+  min-height: 300px;
+}
+
+.book-card h3 {
+  font-size: 1.2rem;
 }
 
 .book-filter {
@@ -140,4 +149,30 @@
 .outline-button:hover {
   background-color: var(--primary);
   color: var(--primary-foreground);
+}
+
+.book-description {
+  font-size: 0.875rem;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
+}
+
+.book-details {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  font-size: 1rem;
+}
+
+.book-details .status {
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+}
+
+.book-details .unread{
+  background-color: rgb(219, 66, 66);
+  color: #FFF;
 }
