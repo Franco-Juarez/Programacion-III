@@ -147,6 +147,18 @@ class LibrosController {
       next(error);
     }
   }
+
+  async getAllGeneros(req, res, next) {
+    try {
+      const generos = await libroService.getAllGeneros();
+      if (!generos || generos.length === 0) {
+        throw new CustomError("No se encontraron géneros", 404);
+      }
+      res.status(200).json(generos);
+    } catch (error) {
+      next(error);
+    }
+  }
 }
 
 module.exports = new LibrosController();
