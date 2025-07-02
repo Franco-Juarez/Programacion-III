@@ -1,10 +1,12 @@
+import OutlineButton from "./outlineButton";
+
 const BookCard = ({ book }) => {
     return (
         <div className="book-card">
             <h3>{book.titulo}</h3>
             <p>{book.autor}</p>
             <div className="book-details">
-                <p>{book.genero}</p>
+                <p className="genre-badge">{book.genero}</p>
                 <p>
                     {
                         book.estado === 'unread' ? 
@@ -17,15 +19,27 @@ const BookCard = ({ book }) => {
                     }
                 </p>
             </div>
+            <div className="book-details">
             <p>{book.anioPublicacion}</p>
+            <span>•</span>
             <p>Calificación: 
             {
                 book.calificacion ? 
-                <span className="rating">{book.calificacion}</span> : 
-                <span className="rating"> No calificado</span>
+                <span className="rating">
+                    {book.calificacion}
+                </span> : 
+                <span className="rating"> 
+                    <p className="no-rating">
+                        No calificado
+                    </p>
+                </span>
             }
             </p>
+            </div>
             <p className="book-description">Descripción: {book.descripcion}</p>
+            <OutlineButton 
+                text="Escribir Reseña" 
+            />
         </div>
     );
 }
