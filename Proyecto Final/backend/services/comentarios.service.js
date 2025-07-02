@@ -1,4 +1,5 @@
 const { Libro, Comentario } = require("../models");
+const { validarLibroEstado } = require("../utils/validar-libro-estado");
 
 class ComentarioService {
   async getAllComentarios() {
@@ -31,6 +32,15 @@ class ComentarioService {
   }
 
   async createComentario(comentario) {
+    const libro = await Libro.findByPk(comentario.libroId, {
+      attributes: ["estado"],
+    });
+    if (!libro) {
+      throw new Error("Libro no encontrado");
+    }
+    
+    validarLibroEstado(libro);
+
     const nuevoComentario = await Comentario.create(comentario);
     return nuevoComentario;
   }

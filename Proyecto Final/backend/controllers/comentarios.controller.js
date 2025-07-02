@@ -1,5 +1,7 @@
+const { Libro } = require("../models");
 const comentarioService = require("../services/comentarios.service");
 const CustomError = require("../utils/custom-error");
+const { validarLibroEstado } = require("../utils/validar-libro-estado");
 
 class ComentariosController {
   async getComentarios(req, res, next) {
@@ -48,6 +50,7 @@ class ComentariosController {
       if (!comentario.libroId || !comentario.texto) {
         throw new CustomError("Faltan datos obligatorios", 400);
       }
+
       const nuevoComentario = await comentarioService.createComentario(
         comentario
       );

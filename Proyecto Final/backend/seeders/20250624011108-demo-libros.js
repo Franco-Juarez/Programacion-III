@@ -21,7 +21,7 @@ module.exports = {
         genero: "Fantasía",
         descripcion:
           "El Señor de los Anillos: La Comunidad del Anillo es el primer libro de la trilogía de J.R.R. Tolkien, que narra la historia de Frodo Bolsón, un hobbit que hereda un anillo mágico, el Anillo Único, con el poder de controlar a todos los demás anillos y someter a la Tierra Media bajo el dominio de Sauron, el Señor Oscuro. Frodo, acompañado por un grupo diverso llamado la Comunidad del Anillo, emprende un peligroso viaje para destruir el Anillo en el Monte del Destino, enfrentándose a numerosos peligros y criaturas malvadas en su camino. ",
-        estado: "unread",
+        estado: "read",
         calificacion: null,
         createdAt: new Date(),
         updatedAt: new Date(),
