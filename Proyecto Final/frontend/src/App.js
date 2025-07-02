@@ -6,7 +6,7 @@ import BookFilter from './components/ui/bookFilter';
 
 function App() {
 
-  const [booksCount, setBooksCount] = useState(3);
+  const [booksCount, setBooksCount] = useState(0);
   const [books, setBooks] = useState([]);
 
   useEffect(() => {
@@ -18,6 +18,7 @@ function App() {
       }
       const data = await response.json();
       setBooks(data);
+      setBooksCount(data.length);
     };
     fetchBooks();
   }, []);

@@ -1,8 +1,6 @@
 'use client';
 import { useState } from "react";
-
 import Button from "../ui/button";
-import OutlineButton from "../ui/outlineButton";
 
 const Header = ({ booksCount }) => {
 
