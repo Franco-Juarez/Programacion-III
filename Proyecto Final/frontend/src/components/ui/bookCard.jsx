@@ -3,19 +3,22 @@ import OutlineButton from "./outlineButton";
 
 const BookCard = ({ book }) => {
 
-   const estrellasCalificacion = (rating) => {
- return Array.from({ length: 5 }).map((_, i) =>
-    i < rating ? (
-      <span key={i} style={{ color: '#FFD700', fontSize: '3rem', marginRight: 2 }}>★</span>
-    ) : (
-      <span key={i} style={{ color: '#000', fontSize: '3rem', marginRight: 2 }}>☆</span>
-    )
-  );
-};
-    
+    const estrellasCalificacion = (rating) => {
+        return Array.from({ length: 5 }).map((_, i) =>
+            i < rating ? (
+                <span key={i} style={{ color: '#FFD700', fontSize: '3rem', marginRight: 2 }}>★</span>
+            ) : (
+                <span key={i} style={{ color: '#000', fontSize: '3rem', marginRight: 2 }}>☆</span>
+            )
+        );
+    };
+
     return (
         <div className="book-card">
-            <h3>{book.titulo}</h3>
+            <div className="flex-box">
+                <h3>{book.titulo}</h3>
+                <OutlineButton text={"Editar"} />
+            </div>
             <p>{book.autor}</p>
             <div className="book-details">
                 <p className="genre-badge">{book.genero}</p>
