@@ -1,6 +1,18 @@
 import OutlineButton from "./outlineButton";
 
+
 const BookCard = ({ book }) => {
+
+   const estrellasCalificacion = (rating) => {
+ return Array.from({ length: 5 }).map((_, i) =>
+    i < rating ? (
+      <span key={i} style={{ color: '#FFD700', fontSize: '3rem', marginRight: 2 }}>★</span>
+    ) : (
+      <span key={i} style={{ color: '#000', fontSize: '3rem', marginRight: 2 }}>☆</span>
+    )
+  );
+};
+    
     return (
         <div className="book-card">
             <h3>{book.titulo}</h3>
@@ -9,37 +21,31 @@ const BookCard = ({ book }) => {
                 <p className="genre-badge">{book.genero}</p>
                 <p>
                     {
-                        book.estado === 'unread' ? 
-                        <span className="status unread">No leído</span> :
-                        book.estado === 'reading' ?
-                        <span className="status reading">Leyendo</span> :
-                        book.estado === 'read' ?
-                        <span className="status read">Leído</span> :
-                        null
+                        book.estado === 'unread' ?
+                            <span className="status unread">No leído</span> :
+                            book.estado === 'reading' ?
+                                <span className="status reading">Leyendo</span> :
+                                book.estado === 'read' ?
+                                    <span className="status read">Leído</span> :
+                                    null
                     }
                 </p>
             </div>
             <div className="book-details">
-            <p>{book.anioPublicacion}</p>
-            <span>•</span>
-            <p>Calificación: 
-            {
-                book.calificacion ? 
-                <span className="rating">
-                    {book.calificacion}
-                </span> : 
-                <span className="rating"> 
-                    <p className="no-rating">
-                        No calificado
-                    </p>
-                </span>
-            }
-            </p>
+                <p>Año de Publicación: {book.anioPublicacion}</p>
+
             </div>
             <p className="book-description">Descripción: {book.descripcion}</p>
-            <OutlineButton 
-                text="Escribir Reseña" 
-            />
+            <div className="book-card-end">
+                <div className="book-star">
+                    {estrellasCalificacion(book.calificacion)}
+                </div>
+
+                <OutlineButton width={"100%"}
+                    text="Escribir Reseña"
+                />
+
+            </div>
         </div>
     );
 }

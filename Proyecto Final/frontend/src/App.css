@@ -72,6 +72,7 @@ button {
 .book-card {
   display: flex;
   flex-direction: column;
+  
   gap: 0.5rem;
   padding: 1.5rem;
   border-radius: 10px;
@@ -221,6 +222,32 @@ button {
   margin-left: 5px;
 }
 
+.book-star {  
+  display: flex;
+  justify-content: center;
+
+}
+
+.book-card-end {
+  margin-top: auto;
+  width: 100%;
+}
+
+.book-rating {
+  /* solo pintar el interior amarillo para que tenga contornos negros */
+  color: gold;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+  
+}
+.book-no-rating {
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
+
+.book-card-comments {
+  width: 100%;
+}
+
 .outline-button {
   display: flex;
   justify-content: center;
@@ -234,9 +261,7 @@ button {
   transition: color 0.2s, background-color 0.2s, border-color 0.2s, text-decoration-color 0.2s, fill 0.2s, stroke 0.2s, transform 0.2s;
   background-color: transparent;
   color: var(--primary);
-  margin-top: auto;
   border: 1px solid var(--primary-border);
-
 }
 
 .outline-button:hover {
