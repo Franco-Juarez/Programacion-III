@@ -1,7 +1,18 @@
+import { useState } from "react";
 import OutlineButton from "./outlineButton";
+import axios from "axios";
+import EditBookModal from "./editBookModal";
 
 
-const BookCard = ({ book }) => {
+const BookCard = ({ book, editingBook, setEditingBook, setIsEditDialogOpen }) => {
+
+
+    const handleEditClick = (book) => {
+        setEditingBook(book);
+        setIsEditDialogOpen(true);
+        console.log("Book to edit:", book);
+
+    };
 
     const estrellasCalificacion = (rating) => {
         return Array.from({ length: 5 }).map((_, i) =>
@@ -17,7 +28,10 @@ const BookCard = ({ book }) => {
         <div className="book-card">
             <div className="flex-box">
                 <h3>{book.titulo}</h3>
-                <OutlineButton text={"Editar"} />
+                <OutlineButton text={"Editar"} onClick={() => {
+                    handleEditClick(book);
+                    console.log(editingBook)
+                }} />
             </div>
             <p>{book.autor}</p>
             <div className="book-details">
@@ -47,7 +61,6 @@ const BookCard = ({ book }) => {
                 <OutlineButton width={"100%"}
                     text="Escribir Reseña"
                 />
-
             </div>
         </div>
     );
