@@ -1,55 +1,191 @@
-# 📘 Proyecto Final entrega parcial – Programación III
+# 🚀 Proyecto Final (Entrega Parcial) - Sistema Web Full-Stack de Gestión de Libros
+
+Este proyecto es una aplicación web full-stack que te permite gestionar libros y comentarios, desarrollada con **React** (frontend), **Node.js/Express** (backend), **Sequelize** (ORM), y **PostgreSQL** como base de datos. Todo el sistema se arma y gestiona con **Docker Compose**.
 
 ---
 
-## 🚀 Instrucciones para correr el proyecto
+## 📦 Estructura del Proyecto
 
-### 1. Clonar el repositorio
-
-```bash
-git clone git@github.com:Franco-Juarez/Programacion-III.git
+```
+.
+├── backend/           # API Express + Sequelize
+├── frontend/          # React
+├── database/          # Scripts SQL iniciales
+├── nginx/             # Configuración de proxy reverso
+├── pgadmin/           # Configuración de pgAdmin
+├── docker-compose.yml # Manejo de servicios
+├── .env.template      # Variables de entorno
+└── ...
 ```
 
-### 2. Ingresar a la carpeta del proyecto
+---
 
-```bash
-cd Programacion-III/Proyecto\ Final
+## 🏁 Requisitos Previos
+
+- [Docker](https://docs.docker.com/get-docker/) y [Docker Compose](https://docs.docker.com/compose/)
+- (Opcional) [Git](https://git-scm.com/)
+
+---
+
+## 🚀 Instalación y Primeros Pasos
+
+### 1️⃣ Clonar el repositorio
+
+```sh
+git clone <https://github.com/Franco-Juarez/Programacion-III.git>
+cd <Programacion-III/"Proyecto Final">
 ```
 
-### 3. Crear el archivo .env usando el template
-```bash
+### 2️⃣ Configurar variables de entorno
+
+Copiá el archivo `.env.template` a `.env` en la raíz del proyecto y revisá/ajustá los valores si es necesario:
+
+```sh
 cp .env.template .env
 ```
 
-### 4. Construir los contenedores con Docker
-```bash
-docker compose build
-o
-docker-compose build
+> **Tip:** Podés dejar los valores por defecto para pruebas locales.
+
+---
+
+## 🐳 Levantar el sistema con Docker Compose
+
+Desde la raíz del proyecto:
+
+```sh
+sudo docker-compose up --build
 ```
-### 5. Levantar los servicios
-```bash
-docker compose up
-o
-docker-compose up
+ó
+```sh
+sudo docker compose up --build
 ```
-### 6. Acceder a la consola del contenedor del backend
-```bash
-docker compose exec backend sh
+
+Esto va a levantar todos los servicios:
+- **Frontend** (React) en [http://localhost:3000](http://localhost:3000)
+- **Backend API** (Express) en [http://localhost:3001/api](http://localhost:3001/api)
+- **Base de datos** (PostgreSQL) en el puerto 5432
+- **pgAdmin** en [http://localhost:5050](http://localhost:5050)
+- **Nginx** (proxy) en [http://localhost](http://localhost)
+
+---
+
+## 🗄️ Migraciones y Seeders (Sequelize)
+
+Una vez que los contenedores estén corriendo, ejecutá las migraciones y seeders **dentro del contenedor backend** (acceder a la consola del contenedor):
+
+```sh
+docker-compose exec backend sh
+# Dentro del contenedor:
+npx sequelize-cli db:migrate
+npx sequelize-cli db:seed:all
+exit
 ```
-### 7. Ejecutar migraciones y seeders
-Pregunta: Se puede hacer esto automaticamente al levantar los servicios?
-```bash
+
+También podés usar el siguiente comando para automatizar el proceso de dejar la base de datos limpia y luego aplicar todas las migraciones y seeders de nuevo:
+
+```sh
+docker-compose exec backend sh
+# Dentro del contenedor:
 npx sequelize-cli db:migrate:undo:all && npx sequelize-cli db:migrate && npx sequelize-cli db:seed:all
+exit
 ```
 
-### 8. Acceder a la aplicacion
+Esto va a crear las tablas y cargar datos de ejemplo.
 
-#### Frontend: http://localhost:3000
-#### API: http://localhost:3001
-1. GET LIBROS http://localhost:3001/api/libros
-2. GET COMENTARIOS http://localhost:3001/api/comentarios
-#### pgAdmin: http://localhost:5050
-1.  POSTGRES_DB: app_database
-2.  POSTGRES_USER: app_user
-3.  POSTGRES_PASSWORD: app_password
+---
+
+## 🧪 Probar la aplicación
+
+1. Accedé a [http://localhost:3000](http://localhost:3000) para ver el frontend (hacé un refrescado de la página si es necesario).
+2. Accedé a [http://localhost:3001/api/libros](http://localhost:3001/api/libros) para probar la API de libros.
+3. Accedé a [http://localhost:3001/api/comentarios](http://localhost:3001/api/comentarios) para probar la API comentarios.
+4. Accedé a [http://localhost:5050](http://localhost:5050) para administrar la base de datos con pgAdmin (usuario y contraseña en `.env`).
+
+---
+
+## 🛠️ Comandos útiles
+
+- **Ver logs en tiempo real:**
+  ```sh
+  docker-compose logs -f
+  ```
+- **Reiniciar servicios:**
+  ```sh
+  docker-compose restart
+  ```
+- **Detener y limpiar todo:**
+  ```sh
+  docker-compose down -v --rmi all
+  ```
+
+---
+
+## ⚠️ Problemas Comunes
+
+- **Puerto ocupado:** Cambiá el puerto en `docker-compose.yml` o liberá el puerto.
+- **Permisos en Docker:**  
+  ```sh
+  sudo chown -R $USER:$USER .
+  chmod -R 755 .
+  ```
+- **Migraciones fallan:** Asegurate de que la base de datos esté levantada antes de correr migraciones.
+
+---
+
+## 📚 Estructura de carpetas relevante
+
+```
+backend/
+  ├── controllers/
+  ├── migrations/
+  ├── models/
+  ├── routes/
+  ├── seeders/
+  ├── services/
+  ├── utils/
+  └── server.js
+database/
+  └── init.sql
+frontend/
+  ├── public/
+  |    └── index.html
+  ├── src/
+  |    ├── components
+  |    |       ├── common
+  |    |       └── ui
+  |    ├── App.css
+  |    ├── App.js
+  |    ├── index.css
+  |    └── index.js
+  └── .env.development
+nginx/
+  └── nginx.conf
+pgadmin/
+  └── servers.json
+.env.template
+docker-compose.yml
+.env.template
+README.md
+```
+
+---
+
+## 👥 Equipo
+
+| Nombre               | Rol          |
+|----------------------|--------------|
+| Lucía Canclini       | Desarrollo   |
+| Franco Juárez        | Desarrollo   |
+| Rodrigo Álvarez      | Desarrollo   |
+| Juan Baranovsky      | Desarrollo   |
+
+---
+
+## 🆘 Recursos
+
+- [Documentación Docker Compose](https://docs.docker.com/compose/)
+- [Sequelize CLI](https://sequelize.org/master/manual/migrations.html)
+- [React](https://react.dev/)
+- [Express](https://expressjs.com/)
+
+---
