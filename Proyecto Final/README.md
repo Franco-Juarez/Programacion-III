@@ -38,6 +38,7 @@ docker-compose up
 docker compose exec backend sh
 ```
 ### 7. Ejecutar migraciones y seeders
+Pregunta: Se puede hacer esto automaticamente al levantar los servicios?
 ```bash
 npx sequelize-cli db:migrate:undo:all && npx sequelize-cli db:migrate && npx sequelize-cli db:seed:all
 ```
