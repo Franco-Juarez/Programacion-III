@@ -37,7 +37,7 @@ module.exports = {
       calificacion: {
         type: Sequelize.INTEGER,
         allowNull: true,
-        defaultValue: null,
+        defaultValue: 0,
         validate: {
           min: 1,
           max: 5,

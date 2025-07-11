@@ -1,14 +1,28 @@
-export const EditBookModal = ({onClose, editingBook, setEditingBook, onSave, isOpen }) => {
 
-    if(!isOpen || !editingBook) {
+
+const EditBookModal = ({ onClose, editingBook, setEditingBook, onSave, isOpen }) => {
+
+    if (!isOpen || !editingBook) {
         return null;
     }
     const handleChange = (field, value) => {
-        setEditingBook({
-            ...editingBook,
-            [field]: value
-        });
+        if (field === "estado" && value === "unread") {
+            setEditingBook({
+                ...editingBook,
+                [field]: value,
+                calificacion: 0
+            })
+            console.log(editingBook)
+        } else {
+
+            setEditingBook({
+                ...editingBook,
+                [field]: value
+            });
+        }
     }
+
+    console.log(editingBook.calificacion);
 
     console.log("Editing book:", editingBook);
     return (
@@ -26,7 +40,7 @@ export const EditBookModal = ({onClose, editingBook, setEditingBook, onSave, isO
                 <div className="form-row">
                     <div className="form-group">
                         <label htmlFor="anioPublicacion">Año de Publicación</label>
-                        <input id="anioPublicacion" type="number" value={editingBook.anioPublicacion} onChange={(e) => handleChange('anioPublicacion', e.target.value)} />
+                        <input id="anioPublicacion" type="number" value={editingBook.anioPublicacion} onChange={(e) => handleChange('anioPublicacion', parseInt(e.target.value))} />
                     </div>
 
                     <div className="form-group">
@@ -50,14 +64,14 @@ export const EditBookModal = ({onClose, editingBook, setEditingBook, onSave, isO
 
                     <div className="form-group">
                         <label htmlFor="calificacion">Calificación</label>
-                        <select id="estado" value={editingBook.calificacion} onChange={(e) => handleChange('calificacion', e.target.value)}>
+                        <select id="calificacion" value={editingBook.calificacion} disabled={editingBook.estado === "unread"} onChange={(e) => handleChange('calificacion', parseInt(e.target.value))}>
                             <option value="0">0 estrellas</option>
                             <option value="1">1 estrella</option>
                             <option value="2">2 estrellas</option>
                             <option value="3">3 estrellas</option>
                             <option value="4">4 estrellas</option>
                             <option value="5">5 estrellas</option>
-                           
+
                         </select>
                     </div>
                 </div>
@@ -70,4 +84,6 @@ export const EditBookModal = ({onClose, editingBook, setEditingBook, onSave, isO
     )
 }
 
-export default EditBookModal
+
+
+export default EditBookModal;

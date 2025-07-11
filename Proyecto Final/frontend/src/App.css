@@ -412,3 +412,8 @@ button.cancel:hover {
 button.save:hover {
   opacity: 0.9;
 }
+
+.disable {
+  pointer-events: none;
+  opacity: 0.5;
+}

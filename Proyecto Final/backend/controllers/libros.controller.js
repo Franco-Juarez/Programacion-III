@@ -49,7 +49,7 @@ class LibrosController {
         filtros.anioPublicacion = anio;
       }
       if (calificacion) {
-        const calificacionNum = parseFloat(calificacion);
+        const calificacionNum = parseInt(calificacion);
         if (
           isNaN(calificacionNum) ||
           calificacionNum < 0 ||
@@ -144,8 +144,8 @@ class LibrosController {
           libro.estado === "reading" ||
           libro.estado === "unread"
         ) {
-          if(libro.estado === "unread") {
-            camposActualizar.calificacion = null;
+          if (libro.estado === "unread") {
+            camposActualizar.calificacion = 0;
           }
           camposActualizar.estado = libro.estado;
         } else {
@@ -166,11 +166,11 @@ class LibrosController {
       console.log("Estado final:", estadoFinal);
 
       if (libro.calificacion != null && libro.calificacion != undefined) {
-        if (libro.calificacion <= 0 && libro.calificacion > 5) {
+        if (libro.calificacion < 0 || libro.calificacion > 5) {
           throw new CustomError("La calificación debe estar entre 0 y 5", 400);
         }
 
-        if (estadoFinal !== "read" && estadoFinal !== "reading") {
+        if (estadoFinal !== "read" && estadoFinal !== "reading" && libro.calificacion !== 0) {
           throw new CustomError(
             "La calificación solo puede ser asignada a libros leídos o en proceso de lectura",
             400
@@ -178,8 +178,6 @@ class LibrosController {
         }
         camposActualizar.calificacion = libro.calificacion;
       }
-
-      
 
       if (Object.keys(camposActualizar).length === 0) {
         throw new CustomError(

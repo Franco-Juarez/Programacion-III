@@ -13,7 +13,7 @@ const BooksGrid = ({ books, refreshBooks }) => {
             await axios.put(`http://localhost:3001/api/libros/${editingBook.id}`, editingBook);
             setIsEditDialogOpen(false);
             setEditingBook(null);
-            refreshBooks(); // Refresh the book list after saving
+            refreshBooks();
         } catch (error) {
             console.error("Error saving book:", error);
             alert("Error al guardar el libro. Por favor, inténtelo de nuevo.");

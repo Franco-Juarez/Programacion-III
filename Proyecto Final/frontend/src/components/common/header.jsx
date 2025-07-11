@@ -1,4 +1,3 @@
-'use client';
 import { useState } from "react";
 import Button from "../ui/button";
 
@@ -17,7 +16,7 @@ const Header = ({ booksCount }) => {
             genero: genre,
             estado: status,
             anioPublicacion: new Date().getFullYear(),
-            calificacion: null,
+            calificacion: 0,
             descripcion: ''
         };
         setBooks(newBook);
@@ -66,17 +65,7 @@ const Header = ({ booksCount }) => {
                         placeholder="Agregar libro"
                     />
                     <label htmlFor="genre">Género:</label>
-                    <select
-                        id="genre"
-                        name="genre"
-                    >
-                        <option value="fantasy">Fantasía</option>
-                        <option value="science-fiction">Ciencia Ficción</option>
-                        <option value="mystery">Misterio</option>
-                        <option value="romance">Romance</option>
-                        <option value="horror">Horror</option>
-                        <option value="non-fiction">No Ficción</option>
-                    </select>
+                    <input type="text" id="genre" name="genre" placeholder="Fantasía"/>
                     <label htmlFor="status">Estado:</label>
                     <select
                         id="status"
