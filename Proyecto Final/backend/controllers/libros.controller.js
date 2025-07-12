@@ -94,7 +94,6 @@ class LibrosController {
       const id = parseInt(req.params.id);
       const libro = req.body;
 
-      // Verificar que el libro existe
       const libroExistente = await libroService.getLibroById(id);
       if (!libroExistente) {
         throw new CustomError(`No existe un libro con el id ${id}`, 404);

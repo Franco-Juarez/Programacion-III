@@ -14,6 +14,7 @@ function App() {
   const [genresList, setGenresList] = useState([]);
   const [genre, setGenre] = useState("all");
   const [state, setState] = useState("all");
+  const [filterInput, setFilterInput] = useState("");
   const [refreshBooks, setRefreshBooks] = useState(false);
 
   
@@ -44,18 +45,27 @@ function App() {
     fetchFilteredBooks();
   }, [refreshBooks]);
 
-  const handleFiltersChange = (selectedGenre, selectedState) => {
+  const handleFiltersChange = (filteredInput, selectedGenre, selectedState) => {
+    setFilterInput(filteredInput);
     setGenre(selectedGenre);
     setState(selectedState);
     
     let filteredBooks = allBooks;
+
+    if(filteredInput !== "") {
+      filteredBooks = filteredBooks.filter((book) => {
+        return (
+          book.titulo.toLowerCase().includes(filteredInput.toLowerCase()) ||
+          book.autor.toLowerCase().includes(filteredInput.toLowerCase()) ||
+          book.anioPublicacion.toString().includes(filteredInput)
+        );
+      });
+    }
     
-    // Apply genre filter if not "all"
     if (selectedGenre !== "all") {
       filteredBooks = filteredBooks.filter((book) => book.genero === selectedGenre);
     }
     
-    // Apply state filter if not "all"
     if (selectedState !== "all") {
       filteredBooks = filteredBooks.filter((book) => book.estado === selectedState);
     }

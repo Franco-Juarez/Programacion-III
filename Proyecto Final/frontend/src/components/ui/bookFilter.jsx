@@ -1,18 +1,19 @@
 import OutlineButton from "./outlineButton";
 
-const BookFilter = ({genresList, handleFiltersChange}) => {
+const BookFilter = ({ genresList, handleFiltersChange}) => {
 
 const handleFilter = (e) => {
     e.preventDefault();
     console.log('filter');
     handleFiltersChange(
+        e.target.search.value,
         e.target.genre.value,
         e.target.status.value
     );
 }
 
 
-const status = [{state: 'all', value: 'Todos'},{state: 'read', value: 'Leído'},{state: 'unread', value: 'No leído'},{state: 'reading', value: 'Leyendo'}];
+const status = [{state: 'all', value: 'Todos los estados'},{state: 'read', value: 'Leído'},{state: 'unread', value: 'No leído'},{state: 'reading', value: 'Leyendo'}];
     
     return (
         <div className='book-filter'>
@@ -22,7 +23,7 @@ const status = [{state: 'all', value: 'Todos'},{state: 'read', value: 'Leído'},
                         type='text'
                         id='search'
                         name='search'
-                        placeholder='Buscar por título, autor o género...'
+                        placeholder='Buscar por título, autor o año...'
                         className='search-input'
                     >
                     </input>
@@ -38,17 +39,12 @@ const status = [{state: 'all', value: 'Todos'},{state: 'read', value: 'Leído'},
 
                     <label htmlFor='genre'>Todos los géneros</label>
                     <select id='genre' name='genre'>
-                        <option value='all'>Todos</option>
+                        <option value='all'>Todos los géneros</option>
                         {genresList.map((genre, index) => {
                             return (
                                 <option key={index} name={genre} value={genre}>{genre}</option>
                             )
                         })}
-                        {/* <option value='all'>All</option>
-                        <option value='fiction'>Fiction</option>
-                        <option value='non-fiction'>Non-Fiction</option>
-                        <option value='fantasy'>Fantasy</option>
-                        <option value='dystopian'>Dystopian</option> */}
                     </select>
                 </div>
                 <OutlineButton text='Aplicar Filtros' />

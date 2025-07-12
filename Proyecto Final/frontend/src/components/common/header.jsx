@@ -48,6 +48,7 @@ const Header = ({ booksCount, setRefreshBooks }) => {
             console.error(error)
         }
         cleanFields();
+        setShowForm(false);
         console.log('Libro agregado:', newBook);
     };
 
