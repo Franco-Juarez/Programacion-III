@@ -32,8 +32,8 @@ Este proyecto es una aplicación web full-stack que te permite gestionar libros 
 ### 1️⃣ Clonar el repositorio
 
 ```sh
-git clone <https://github.com/Franco-Juarez/Programacion-III.git>
-cd <Programacion-III/"Proyecto Final">
+git clone https://github.com/Franco-Juarez/Programacion-III.git
+cd Programacion-III/"Proyecto Final"
 ```
 
 ### 2️⃣ Configurar variables de entorno
@@ -53,11 +53,11 @@ cp .env.template .env
 Desde la raíz del proyecto:
 
 ```sh
-sudo docker-compose up --build
+sudo docker-compose up --build -d
 ```
 ó
 ```sh
-sudo docker compose up --build
+sudo docker compose up --build -d
 ```
 
 Esto va a levantar todos los servicios:
