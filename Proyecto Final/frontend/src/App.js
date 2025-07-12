@@ -11,6 +11,7 @@ function App() {
   const [genresList, setGenresList] = useState([]);
   const [genre, setGenre] = useState("all");
   const [state, setState] = useState("all");
+  const [refreshBooks, setRefreshBooks] = useState(false);
 
   
   const fetchFilteredBooks = async () => {
@@ -38,7 +39,7 @@ function App() {
   useEffect(() => {
     fetchBooks();
     fetchFilteredBooks();
-  }, []);
+  }, [refreshBooks]);
 
   const handleGenreChange = (selectedGenre) => {
     setGenre(selectedGenre);
@@ -66,7 +67,7 @@ function App() {
 
   return (
     <div className="container">
-      <Header booksCount={booksCount} />
+      <Header booksCount={booksCount} setRefreshBooks={setRefreshBooks} />
       <BookFilter genresList={genresList} handleGenreChange={handleGenreChange} handleStateChange={handleStateChange}/>
       <BooksGrid books={books} refreshBooks={fetchBooks}/>
     </div>
