@@ -1,12 +1,14 @@
 import OutlineButton from "./outlineButton";
 
-const BookFilter = ({genresList, handleGenreChange, handleStateChange}) => {
+const BookFilter = ({genresList, handleFiltersChange}) => {
 
 const handleFilter = (e) => {
     e.preventDefault();
     console.log('filter');
-    handleGenreChange(e.target.genre.value);    
-    handleStateChange(e.target.status.value);
+    handleFiltersChange(
+        e.target.genre.value,
+        e.target.status.value
+    );
 }
 
 

@@ -44,35 +44,31 @@ function App() {
     fetchFilteredBooks();
   }, [refreshBooks]);
 
-  const handleGenreChange = (selectedGenre) => {
+  const handleFiltersChange = (selectedGenre, selectedState) => {
     setGenre(selectedGenre);
-    if (selectedGenre === "all") {
-      setBooks(allBooks);
-      setBooksCount(allBooks.length);
-    } else {
-      const filteredBooks = allBooks.filter((book) => book.genero === selectedGenre);
-      setBooks(filteredBooks);
-      setBooksCount(filteredBooks.length);
-    }
-  };
-
-  const handleStateChange = (selectedState) => {
     setState(selectedState);
-    if (selectedState === "all") {
-      setBooks(allBooks);
-      setBooksCount(allBooks.length);
-    } else {
-      const filteredBooks = allBooks.filter((book) => book.estado === selectedState);
-      setBooks(filteredBooks);
-      setBooksCount(filteredBooks.length);
+    
+    let filteredBooks = allBooks;
+    
+    // Apply genre filter if not "all"
+    if (selectedGenre !== "all") {
+      filteredBooks = filteredBooks.filter((book) => book.genero === selectedGenre);
     }
+    
+    // Apply state filter if not "all"
+    if (selectedState !== "all") {
+      filteredBooks = filteredBooks.filter((book) => book.estado === selectedState);
+    }
+    
+    setBooks(filteredBooks);
+    setBooksCount(filteredBooks.length);
   };
 
   return (
     <Router>
     <div className="container">
       <Header booksCount={booksCount} setRefreshBooks={setRefreshBooks} />
-      <BookFilter genresList={genresList} handleGenreChange={handleGenreChange} handleStateChange={handleStateChange}/>
+      <BookFilter genresList={genresList} handleFiltersChange={handleFiltersChange}/>
       <Routes>
         <Route
           path="/"
