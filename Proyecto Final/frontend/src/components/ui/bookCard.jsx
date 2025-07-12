@@ -1,17 +1,14 @@
-import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import OutlineButton from "./outlineButton";
-import axios from "axios";
-import EditBookModal from "./editBookModal";
 
+const BookCard = ({ book, editingBook, setEditingBook, setIsEditDialogOpen, setReviewModalOpen }) => {
 
-const BookCard = ({ book, editingBook, setEditingBook, setIsEditDialogOpen }) => {
-
+    const navigate = useNavigate();
 
     const handleEditClick = (book) => {
         setEditingBook(book);
         setIsEditDialogOpen(true);
         console.log("Book to edit:", book);
-
     };
 
     const estrellasCalificacion = (rating) => {
@@ -25,12 +22,14 @@ const BookCard = ({ book, editingBook, setEditingBook, setIsEditDialogOpen }) =>
     };
 
     return (
-        <div className="book-card">
+        <div 
+        onClick={() => navigate(`/libro/${book.id}`)}
+        className="book-card">
             <div className="flex-box">
                 <h3>{book.titulo}</h3>
-                <OutlineButton text={"Editar"} onClick={() => {
+                <OutlineButton text={"Editar"} onClick={(e) => {
+                    e.stopPropagation();
                     handleEditClick(book);
-                    console.log(editingBook)
                 }} />
             </div>
             <p>{book.autor}</p>
@@ -50,16 +49,18 @@ const BookCard = ({ book, editingBook, setEditingBook, setIsEditDialogOpen }) =>
             </div>
             <div className="book-details">
                 <p>Año de Publicación: {book.anioPublicacion}</p>
-
             </div>
             <p className="book-description">Descripción: {book.descripcion}</p>
             <div className="book-card-end">
                 <div className="book-star">
                     {estrellasCalificacion(book.calificacion)}
                 </div>
-
                 <OutlineButton width={"100%"}
                     text="Escribir Reseña"
+                    onClick={(e) => {
+                        e.stopPropagation()
+                        setReviewModalOpen(true)
+                    }}
                 />
             </div>
         </div>

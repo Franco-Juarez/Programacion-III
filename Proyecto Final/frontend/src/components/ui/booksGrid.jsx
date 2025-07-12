@@ -1,12 +1,16 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import BookCard from "./bookCard";
 import EditBookModal from "./editBookModal";
 import axios from "axios";
+import ReviewModal from "./reviewModal";
 
 const BooksGrid = ({ books, refreshBooks }) => {
 
     const [editingBook, setEditingBook] = useState(null);
     const [isEditDialogOpen, setIsEditDialogOpen] = useState(false);
+    const [reviewModal, setReviewModalOpen] = useState(false)
+    const [commentsByBook, setCommentsByBook] = useState({});
+    const [selectedLibroId, setSelectedLibroId] = useState(null);
 
     const handleSaveEdit = async () => {
         try {
@@ -32,13 +36,25 @@ const BooksGrid = ({ books, refreshBooks }) => {
                     <BookCard
                         key={book.id}
                         book={book}
+                        comment={commentsByBook[book.id] || []}
                         editingBook={editingBook}
                         setEditingBook={setEditingBook}
                         setIsEditDialogOpen={setIsEditDialogOpen}
+                        setReviewModalOpen={() => {
+                            setSelectedLibroId(book.id);
+                            setReviewModalOpen(true);
+                          }}
                     />
                 ))}
             </div>
-            <EditBookModal editingBook={editingBook} setEditingBook={setEditingBook} onSave={handleSaveEdit} isOpen={isEditDialogOpen} onClose={onCloseEditDialog} />
+            <EditBookModal
+                editingBook={editingBook}
+                setEditingBook={setEditingBook}
+                onSave={handleSaveEdit}
+                isOpen={isEditDialogOpen}
+                onClose={onCloseEditDialog}
+            />
+            <ReviewModal libroId={selectedLibroId} reviewModal={reviewModal} onClose={() => setReviewModalOpen(false)} />
         </>
     );
 }

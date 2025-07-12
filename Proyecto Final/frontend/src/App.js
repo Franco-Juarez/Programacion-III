@@ -3,6 +3,9 @@ import "./App.css";
 import Header from "./components/common/header";
 import BooksGrid from "./components/ui/booksGrid";
 import BookFilter from "./components/ui/bookFilter";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { BookDetails } from "./components/bookDetails";
+
 
 function App() {
   const [booksCount, setBooksCount] = useState(0);
@@ -35,7 +38,7 @@ function App() {
     setAllBooks(data);
     setBooksCount(data.length);
   };
- 
+
   useEffect(() => {
     fetchBooks();
     fetchFilteredBooks();
@@ -66,11 +69,24 @@ function App() {
   };
 
   return (
+    <Router>
     <div className="container">
       <Header booksCount={booksCount} setRefreshBooks={setRefreshBooks} />
       <BookFilter genresList={genresList} handleGenreChange={handleGenreChange} handleStateChange={handleStateChange}/>
-      <BooksGrid books={books} refreshBooks={fetchBooks}/>
+      <Routes>
+        <Route
+          path="/"
+          element={<BooksGrid books={books} refreshBooks={fetchBooks} />}
+        />
+        <Route
+          path="/libro/:id"
+          element={<BookDetails
+            
+          />}
+        />
+      </Routes>
     </div>
+    </Router>
   );
 }
 
