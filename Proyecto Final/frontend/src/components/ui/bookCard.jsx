@@ -13,14 +13,10 @@ const BookCard = ({ book, editingBook, setEditingBook, setIsEditDialogOpen, setR
 
     const estrellasCalificacion = (rating) => {
         return Array.from({ length: 5 }).map((_, i) =>
-            i < rating ? (
-                <span key={i} style={{ color: '#FFD700', fontSize: '3rem', marginRight: 2 }}>★</span>
-            ) : (
-                <span key={i} style={{ color: '#000', fontSize: '3rem', marginRight: 2 }}>☆</span>
-            )
+          <span key={i} className={i < rating ? "star filled" : "star"}>★</span>
         );
-    };
-
+      };
+      
     return (
         <div 
         onClick={() => navigate(`/libro/${book.id}`)}
