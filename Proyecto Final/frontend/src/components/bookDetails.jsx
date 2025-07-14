@@ -5,7 +5,7 @@ export const BookDetails = () => {
   const { id } = useParams();
   const [book, setBook] = useState(null);
   const [loading, setLoading] = useState(true);
-  const [comments, setComments] = useState([]) 
+  const [comments, setComments] = useState([])
 
   useEffect(() => {
     const fetchBook = async () => {
@@ -21,17 +21,17 @@ export const BookDetails = () => {
       }
     };
     const fetchComment = async () => {
-        try {
-            const response = await fetch(`http://localhost:3001/api/comentarios/libro/${id}`);
-            if (response.ok) {
-              const data = await response.json();
-              console.log(data)
-              setComments(data)
-              console.log(comments)
-            }
-        }catch(error) {
-            console.error(error)
+      try {
+        const response = await fetch(`http://localhost:3001/api/comentarios/libro/${id}`);
+        if (response.ok) {
+          const data = await response.json();
+          console.log(data)
+          setComments(data)
+          console.log(comments)
         }
+      } catch (error) {
+        console.error(error)
+      }
     }
     fetchComment();
     fetchBook();
@@ -40,24 +40,35 @@ export const BookDetails = () => {
   if (loading) return <div>Cargando...</div>;
   if (!book) return <div>No se encontró el libro.</div>;
 
+
+  function verifyStatus(status) {
+    if (status === "read") {
+      return "Leído";
+    } else if (status === "reading") {
+      return "Leyendo";
+    } else {
+      return "No leído";
+    }
+  }
+
   return (
     <div>
       <h2>{book.titulo}</h2>
       <p><b>Autor:</b> {book.autor}</p>
       <p><b>Género:</b> {book.genero}</p>
       <p><b>Año de publicación:</b> {book.anioPublicacion}</p>
-      <p><b>Estado:</b> {book.estado}</p>
+      <p><b>Estado:</b> {verifyStatus(book.estado)}</p>
       <p><b>Descripción:</b> {book.descripcion}</p>
       <div>
         <h4>Comentarios:</h4>
         {comments.length > 0 ? (
-            comments.map((comment) => (
+          comments.map((comment) => (
             <p key={comment.id}>· {comment.texto}</p>
-            ))
+          ))
         ) : (
-            <p>No hay comentarios</p>
+          <p>No hay comentarios</p>
         )}
-        </div>
+      </div>
     </div>
   );
 };

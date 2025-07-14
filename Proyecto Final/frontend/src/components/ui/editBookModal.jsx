@@ -1,13 +1,23 @@
-export const EditBookModal = ({onClose, editingBook, setEditingBook, onSave, isOpen }) => {
+import { set } from "lodash";
 
-    if(!isOpen || !editingBook) {
+export const EditBookModal = ({ onClose, editingBook, setEditingBook, onSave, isOpen }) => {
+
+    if (!isOpen || !editingBook) {
         return null;
     }
     const handleChange = (field, value) => {
-        setEditingBook({
-            ...editingBook,
-            [field]: value
-        });
+        if (field === "estado" && value === "read") {
+            setEditingBook({
+                ...editingBook,
+                [field]: value,
+                calificacion: 0
+            })
+        } else {
+            setEditingBook({
+                ...editingBook,
+                [field]: value
+            });
+        }
     }
 
     console.log("Editing book:", editingBook);
@@ -50,14 +60,14 @@ export const EditBookModal = ({onClose, editingBook, setEditingBook, onSave, isO
 
                     <div className="form-group">
                         <label htmlFor="calificacion">Calificación</label>
-                        <select id="estado" value={editingBook.calificacion} onChange={(e) => handleChange('calificacion', e.target.value)}>
+                        <select id="calificacion" value={editingBook.calificacion} disabled={editingBook.estado === "unread"} onChange={(e) => handleChange('calificacion', e.target.value)}>
                             <option value="0">0 estrellas</option>
                             <option value="1">1 estrella</option>
                             <option value="2">2 estrellas</option>
                             <option value="3">3 estrellas</option>
                             <option value="4">4 estrellas</option>
                             <option value="5">5 estrellas</option>
-                           
+
                         </select>
                     </div>
                 </div>

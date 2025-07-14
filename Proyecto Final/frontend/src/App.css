@@ -72,6 +72,7 @@ button {
 .book-card {
   display: flex;
   flex-direction: column;
+  cursor: pointer;
   position: relative;
   gap: 0.5rem;
   padding: 1.5rem;
