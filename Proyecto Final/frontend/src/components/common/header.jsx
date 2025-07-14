@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Button from "../ui/button";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
+
 
 const Header = ({ booksCount, setRefreshBooks }) => {
 
@@ -12,6 +13,9 @@ const Header = ({ booksCount, setRefreshBooks }) => {
     const [author, setAuthor] = useState({})
     const [books, setBooks] = useState({});
     const [showForm, setShowForm] = useState(false);
+    const location = useLocation();
+    const isHome = location.pathname === '/'
+
 
     const cleanFields = () => {
         setBookTitle('')
@@ -70,10 +74,14 @@ const Header = ({ booksCount, setRefreshBooks }) => {
                 </p>
             </div>
 
-            <Button
-                text="Agregar Libro"
-                onClick={handleShowForm}
-            />
+            {
+                isHome && (
+                    <Button
+                        text="Agregar Libro"
+                        onClick={handleShowForm}
+                    />
+                )
+            }
             {showForm && (
                 <aside
                     className="add-book-form"

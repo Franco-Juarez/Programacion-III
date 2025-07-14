@@ -170,22 +170,22 @@ button {
   transform: scale(1.02);
 }
 
-.book-details .status {
+.book-details .status, .card-detail .status {
   border-radius: 20px;
   padding: 0.5rem 0.5rem;
 }
 
-.book-details .unread{
+.book-details .unread, .card-detail .unread{
   background-color: rgb(252, 220, 220);
   color: rgb(184, 22, 22);;
 }
 
-.book-details .reading {
+.book-details .reading, .card-detail .reading {
   background-color: rgb(219 234 254);
   color: rgb(30 64 175);
 }
 
-.book-details .read {
+.book-details .read, .card-detail .read {
   background-color: rgb(220 252 231);
   color: rgb(22 101 52 );
 }
@@ -617,4 +617,27 @@ button.save:hover {
 }
 .header-link:hover {
   transform: scale(1.02);
+}
+
+.card-detail {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-top: 2rem;
+  max-width: 950px;
+  box-shadow: var(--card-shadow);
+  padding: 1rem;
+  border-radius: 1rem;
+  background-color: #fdfbfb;
+}
+
+.card-detail .status-container {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  align-items: flex-start;
+}
+
+.comments-container p{
+  font-style: italic;
 }

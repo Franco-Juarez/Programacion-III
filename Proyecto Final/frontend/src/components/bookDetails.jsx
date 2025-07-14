@@ -43,23 +43,25 @@ export const BookDetails = () => {
 
   function verifyStatus(status) {
     if (status === "read") {
-      return "Leído";
+      return <span className="status read">Leído</span>;
     } else if (status === "reading") {
-      return "Leyendo";
+      return <span className="status reading">Leyendo</span>;
     } else {
-      return "No leído";
+      return <span className="status unread">No leído</span>;
     }
   }
 
   return (
-    <div>
+    <div className="card-detail">
       <h2>{book.titulo}</h2>
       <p><b>Autor:</b> {book.autor}</p>
       <p><b>Género:</b> {book.genero}</p>
       <p><b>Año de publicación:</b> {book.anioPublicacion}</p>
-      <p><b>Estado:</b> {verifyStatus(book.estado)}</p>
+      <p  className="status-container"><b>Estado:</b> 
+        {verifyStatus(book.estado)}
+      </p>
       <p><b>Descripción:</b> {book.descripcion}</p>
-      <div>
+      <div className="comments-container">
         <h4>Comentarios:</h4>
         {comments.length > 0 ? (
           comments.map((comment) => (

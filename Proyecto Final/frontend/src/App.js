@@ -78,11 +78,15 @@ function App() {
     <Router>
     <div className="container">
       <Header booksCount={booksCount} setRefreshBooks={setRefreshBooks} />
-      <BookFilter genresList={genresList} handleFiltersChange={handleFiltersChange}/>
       <Routes>
         <Route
           path="/"
-          element={<BooksGrid books={books} refreshBooks={fetchBooks} />}
+          element={
+        <>
+          <BookFilter genresList={genresList} handleFiltersChange={handleFiltersChange}/>
+          <BooksGrid books={books} refreshBooks={fetchBooks} />
+        </>    
+        }
         />
         <Route
           path="/libro/:id"
