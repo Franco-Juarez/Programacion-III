@@ -1,11 +1,12 @@
 import { useState } from "react";
 import Button from "../ui/button";
+import { Link } from "react-router-dom";
 
 const Header = ({ booksCount, setRefreshBooks }) => {
 
     const [bookTitle, setBookTitle] = useState('');
     const [genre, setGenre] = useState('');
-    const [status, setStatus] = useState('unread'); 
+    const [status, setStatus] = useState('unread');
     const [year, setYear] = useState()
     const [description, setDescription] = useState('');
     const [author, setAuthor] = useState({})
@@ -44,7 +45,7 @@ const Header = ({ booksCount, setRefreshBooks }) => {
                 throw new Error('Error al agregar el libro');
             }
             setRefreshBooks(prev => !prev);
-        }catch(error) {
+        } catch (error) {
             console.error(error)
         }
         cleanFields();
@@ -58,87 +59,90 @@ const Header = ({ booksCount, setRefreshBooks }) => {
 
     return (
         <header className="header">
-            <span>
-                <h1>
-                    Mi Biblioteca Personal
-                </h1>
+            <div>
+                <Link to={"/"} className="header-link">
+                    <h1>
+                        Mi Biblioteca Personal
+                    </h1>
+                </Link>
                 <p>
                     {booksCount} libros en tu colección
                 </p>
-            </span>
+            </div>
+
             <Button
                 text="Agregar Libro"
                 onClick={handleShowForm}
             />
             {showForm && (
-            <aside 
-            className="add-book-form"
-            >
-                <button
-                className="close-button"
-                onClick={handleShowForm}
+                <aside
+                    className="add-book-form"
                 >
-                    X
-                </button>
-                <form onSubmit={handleSubmit}>
-                {/* Agregar un libro */}
-                    <h2>Agregar un libro</h2>
-                    <label htmlFor="search">Título</label>
-                    <input
-                    onChange={(e) => setBookTitle(e.target.value)}
-                        type="text"
-                        id="title"
-                        name="title"
-                        placeholder="Agregar libro"
-                    />
-                    <label htmlFor="author">Autor:</label>
-                    <input 
-                        onChange={(e) => setAuthor(e.target.value)}
-                        type="text" 
-                        id="author" 
-                        name="author" 
-                        placeholder="Nombre del autor"
-                        required
-                    />
-                     <label htmlFor="year">Año de Publicación</label>
-                    <input 
-                        onChange={(e) => setYear(e.target.value)}
-                        type="number" 
-                        id="year" 
-                        name="year" 
-                        placeholder="Año de publicación"
-                        required
-                    />
-                    <label htmlFor="genre">Género:</label>
-                    <input 
-                    onChange={(e) => setGenre(e.target.value)}
-                    type="text" id="genre" name="genre" placeholder="Fantasía"/>
-                    <label htmlFor="status">Estado:</label>
-                    <select
-                        id="status"
-                        name="status"
-                        onChange={(e) => setStatus(e.target.value)}
-                    >
-                        <option value="unread">No leído</option>
-                        <option value="reading">Leyendo</option>
-                        <option value="read">Leído</option>
-                    </select>
-                    <label htmlFor="description">Descripción:</label>
-                    <textarea 
-                        onChange={(e) => setDescription(e.target.value)}
-                        id="description" 
-                        name="description" 
-                        placeholder="Descripción del libro"
-                        required
-                    />
                     <button
-                        className="form-button"
-                        type="submit"
+                        className="close-button"
+                        onClick={handleShowForm}
                     >
-                        Agregar Libro
+                        X
                     </button>
-                </form>
-            </aside>
+                    <form onSubmit={handleSubmit}>
+                        {/* Agregar un libro */}
+                        <h2>Agregar un libro</h2>
+                        <label htmlFor="search">Título</label>
+                        <input
+                            onChange={(e) => setBookTitle(e.target.value)}
+                            type="text"
+                            id="title"
+                            name="title"
+                            placeholder="Agregar libro"
+                        />
+                        <label htmlFor="author">Autor:</label>
+                        <input
+                            onChange={(e) => setAuthor(e.target.value)}
+                            type="text"
+                            id="author"
+                            name="author"
+                            placeholder="Nombre del autor"
+                            required
+                        />
+                        <label htmlFor="year">Año de Publicación</label>
+                        <input
+                            onChange={(e) => setYear(e.target.value)}
+                            type="number"
+                            id="year"
+                            name="year"
+                            placeholder="Año de publicación"
+                            required
+                        />
+                        <label htmlFor="genre">Género:</label>
+                        <input
+                            onChange={(e) => setGenre(e.target.value)}
+                            type="text" id="genre" name="genre" placeholder="Fantasía" />
+                        <label htmlFor="status">Estado:</label>
+                        <select
+                            id="status"
+                            name="status"
+                            onChange={(e) => setStatus(e.target.value)}
+                        >
+                            <option value="unread">No leído</option>
+                            <option value="reading">Leyendo</option>
+                            <option value="read">Leído</option>
+                        </select>
+                        <label htmlFor="description">Descripción:</label>
+                        <textarea
+                            onChange={(e) => setDescription(e.target.value)}
+                            id="description"
+                            name="description"
+                            placeholder="Descripción del libro"
+                            required
+                        />
+                        <button
+                            className="form-button"
+                            type="submit"
+                        >
+                            Agregar Libro
+                        </button>
+                    </form>
+                </aside>
             )}
         </header>
     );
