@@ -3,7 +3,7 @@ import BookCard from "./bookCard";
 import EditBookModal from "./editBookModal";
 import axios from "axios";
 import ReviewModal from "./reviewModal";
-import PreviewsModal from "./previewsModal"; //RODRI
+import PreviewsModal from "./previewsModal";
 
 const BooksGrid = ({ books, refreshBooks }) => {
 
@@ -12,8 +12,8 @@ const BooksGrid = ({ books, refreshBooks }) => {
     const [reviewModal, setReviewModalOpen] = useState(false)
     const [commentsByBook, setCommentsByBook] = useState({});
     const [selectedLibroId, setSelectedLibroId] = useState(null);
-    const [previewsModalOpen, setPreviewsModalOpen] = useState(false); //RODRI
-    const [selectedBookId, setSelectedBookId] = useState(null); //RODRI
+    const [previewsModalOpen, setPreviewsModalOpen] = useState(false);
+    const [selectedBookId, setSelectedBookId] = useState(null);
 
     const handleSaveEdit = async () => {
         try {
@@ -47,7 +47,7 @@ const BooksGrid = ({ books, refreshBooks }) => {
                             setSelectedLibroId(book.id);
                             setReviewModalOpen(true);
                         }}
-                        setPreviewsModalOpen={() => { //RODRI
+                        setPreviewsModalOpen={() => {
                         setSelectedBookId(book.id);
                         setPreviewsModalOpen(true);
                         }}
@@ -62,7 +62,7 @@ const BooksGrid = ({ books, refreshBooks }) => {
                 onClose={onCloseEditDialog}
             />
             <ReviewModal libroId={selectedLibroId} reviewModal={reviewModal} onClose={() => setReviewModalOpen(false)} />
-            <PreviewsModal  //RODRI
+            <PreviewsModal
                 libroId={selectedBookId}
                 open={previewsModalOpen}
                 onClose={() => setPreviewsModalOpen(false)}
