@@ -22,7 +22,7 @@ module.exports = {
         descripcion:
           "El Señor de los Anillos: La Comunidad del Anillo es el primer libro de la trilogía de J.R.R. Tolkien, que narra la historia de Frodo Bolsón, un hobbit que hereda un anillo mágico, el Anillo Único, con el poder de controlar a todos los demás anillos y someter a la Tierra Media bajo el dominio de Sauron, el Señor Oscuro. Frodo, acompañado por un grupo diverso llamado la Comunidad del Anillo, emprende un peligroso viaje para destruir el Anillo en el Monte del Destino, enfrentándose a numerosos peligros y criaturas malvadas en su camino. ",
         estado: "read",
-        calificacion: 0,
+        calificacion: 3,
         createdAt: new Date(),
         updatedAt: new Date(),
       },
@@ -45,7 +45,7 @@ module.exports = {
         genero: "Realismo mágico",
         descripcion:
           "Cien años de soledad narra la historia de la familia Buendía a lo largo de siete generaciones en el pueblo ficticio de Macondo. Fundado por José Arcadio Buendía y Úrsula Iguarán, la novela explora temas como el amor, la soledad, la guerra y el destino. A medida que los Buendía enfrentan tragedias y eventos sobrenaturales, la historia se convierte en una reflexión sobre el tiempo cíclico y la inevitabilidad del destino.",
-        estado: "unread",
+        estado: "reading",
         calificacion: 0,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -57,8 +57,8 @@ module.exports = {
         genero: "Romance",
         descripcion:
           "Orgullo y prejuicio es una novela romántica que sigue la vida de Elizabeth Bennet, una joven inteligente y decidida, mientras navega por las complejidades del amor, el matrimonio y las expectativas sociales en la Inglaterra del siglo XIX. A través de su relación con el orgulloso pero enigmático Sr. Darcy, Elizabeth desafía las normas sociales y descubre la importancia de la comprensión mutua y el respeto en una relación.",
-        estado: "unread",
-        calificacion: 0,
+        estado: "read",
+        calificacion: 4,
         createdAt: new Date(),
         updatedAt: new Date(),
       },
