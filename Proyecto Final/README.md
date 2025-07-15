@@ -74,7 +74,7 @@ Esto va a levantar todos los servicios:
 Una vez que los contenedores estén corriendo, ejecutá las migraciones y seeders **dentro del contenedor backend** (acceder a la consola del contenedor):
 
 ```sh
-docker-compose exec backend sh
+sudo docker-compose exec backend sh
 # Dentro del contenedor:
 npx sequelize-cli db:migrate
 npx sequelize-cli db:seed:all
@@ -164,7 +164,6 @@ pgadmin/
   └── servers.json
 .env.template
 docker-compose.yml
-.env.template
 README.md
 ```
 
@@ -174,10 +173,10 @@ README.md
 
 | Nombre               | Rol          |
 |----------------------|--------------|
-| Lucía Canclini       | Desarrollo   |
-| Franco Juárez        | Desarrollo   |
-| Rodrigo Álvarez      | Desarrollo   |
 | Juan Baranovsky      | Desarrollo   |
+| Franco Juárez        | Desarrollo   |
+| Lucía Canclini       | Desarrollo   |
+| Rodrigo Álvarez      | Desarrollo   |
 
 ---
 

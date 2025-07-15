@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import OutlineButton from "./outlineButton";
 
-const BookCard = ({ book, editingBook, setEditingBook, setIsEditDialogOpen, setReviewModalOpen }) => {
+const BookCard = ({ book, editingBook, setEditingBook, setIsEditDialogOpen, setReviewModalOpen, setPreviewsModalOpen }) => { //RODRI
 
     const navigate = useNavigate();
 
@@ -56,6 +56,15 @@ const BookCard = ({ book, editingBook, setEditingBook, setIsEditDialogOpen, setR
                     onClick={(e) => {
                         e.stopPropagation()
                         setReviewModalOpen(true)
+                    }}
+                />
+                <div style={{ height: "8px" }} />
+                <OutlineButton  //RODRI (el div de arriba también)
+                    width={"100%"}
+                    text="Ver Reseñas"
+                    onClick={(e) => {
+                        e.stopPropagation();
+                        setPreviewsModalOpen(); 
                     }}
                 />
             </div>
