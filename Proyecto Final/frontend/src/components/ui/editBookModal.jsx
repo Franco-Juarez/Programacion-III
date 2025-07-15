@@ -20,7 +20,6 @@ export const EditBookModal = ({ onClose, editingBook, setEditingBook, onSave, is
         }
     }
 
-    console.log("Editing book:", editingBook);
     return (
         <div className="modal-overlay">
             <div className="modal-content">

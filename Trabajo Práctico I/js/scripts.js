@@ -20,7 +20,6 @@ antBtn.disabled = true;
 
 antBtn.addEventListener("click", function() {
     posicion -= (anchoCard + 40);
-    console.log(posicion)
     if (posicion <= 8) {
         posicion = 0;
         antBtn.disabled = true;
@@ -35,7 +34,6 @@ antBtn.addEventListener("click", function() {
 
 sigBtn.addEventListener("click", function() {
     posicion += (anchoCard + 40);
-    console.log(posicion)
     if (posicion > 0) {
         antBtn.disabled = false;
     }

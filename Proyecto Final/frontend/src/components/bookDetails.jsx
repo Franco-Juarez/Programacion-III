@@ -25,7 +25,6 @@ export const BookDetails = () => {
         const response = await fetch(`http://localhost:3001/api/comentarios/libro/${id}`);
         if (response.ok) {
           const data = await response.json();
-          console.log(data)
           setComments(data)
         }
       } catch (error) {

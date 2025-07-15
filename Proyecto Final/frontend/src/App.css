@@ -407,7 +407,6 @@ button {
   z-index: 999999;
 }
 
-/*agregar reseña------------------------------------------------------------*/
 .modal-content {
   background-color: var(--background);
   padding: 2rem;
@@ -500,7 +499,6 @@ button {
   color: var(--grey);
 }
 
-/*agregar reseña------------------------------------------------------------*/
 .form-group {
   display: flex;
   flex-direction: column;
@@ -550,7 +548,7 @@ button.save:hover {
   pointer-events: none;
   opacity: 0.5;
 }
-/*formulario d edicion------------------------------------------------------------------------------------------------------------------*/
+
 .modal-content h2 {
   font-size: 1.5rem;
   margin-bottom: 1rem;

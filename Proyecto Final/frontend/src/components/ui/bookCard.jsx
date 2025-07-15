@@ -8,7 +8,6 @@ const BookCard = ({ book, editingBook, setEditingBook, setIsEditDialogOpen, setR
     const handleEditClick = (book) => {
         setEditingBook(book);
         setIsEditDialogOpen(true);
-        console.log("Book to edit:", book);
     };
 
     const estrellasCalificacion = (rating) => {

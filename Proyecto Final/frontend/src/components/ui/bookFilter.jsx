@@ -4,7 +4,6 @@ const BookFilter = ({ genresList, handleFiltersChange}) => {
 
 const handleFilter = (e) => {
     e.preventDefault();
-    console.log('filter');
     handleFiltersChange(
         e.target.search.value,
         e.target.genre.value,

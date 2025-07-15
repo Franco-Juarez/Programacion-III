@@ -1,4 +1,4 @@
-# 🚀 Proyecto Final (Entrega Parcial) - Sistema Web Full-Stack de Gestión de Libros
+# 🚀 Proyecto Final (Entrega Final) - Sistema Web Full-Stack de Gestión de Libros
 
 Este proyecto es una aplicación web full-stack que te permite gestionar libros y comentarios, desarrollada con **React** (frontend), **Node.js/Express** (backend), **Sequelize** (ORM), y **PostgreSQL** como base de datos. Todo el sistema se arma y gestiona con **Docker Compose**.
 

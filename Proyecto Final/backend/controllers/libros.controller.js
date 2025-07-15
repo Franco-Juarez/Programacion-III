@@ -162,7 +162,6 @@ class LibrosController {
           ? camposActualizar.estado
           : libroExistente.estado;
 
-      console.log("Estado final:", estadoFinal);
 
       if (libro.calificacion != null && libro.calificacion != undefined) {
         if (libro.calificacion < 0 || libro.calificacion > 5) {
