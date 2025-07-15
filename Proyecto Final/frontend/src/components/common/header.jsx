@@ -118,6 +118,7 @@ const Header = ({ booksCount, setRefreshBooks }) => {
                             type="number"
                             id="year"
                             name="year"
+                             min="1"
                             placeholder="Año de publicación"
                             required
                         />

@@ -1,5 +1,3 @@
-import { set } from "lodash";
-
 export const EditBookModal = ({ onClose, editingBook, setEditingBook, onSave, isOpen }) => {
 
     if (!isOpen || !editingBook) {
@@ -35,7 +33,11 @@ export const EditBookModal = ({ onClose, editingBook, setEditingBook, onSave, is
                 <div className="form-row">
                     <div className="form-group">
                         <label htmlFor="anioPublicacion">Año de Publicación</label>
-                        <input id="anioPublicacion" type="number" value={editingBook.anioPublicacion} onChange={(e) => handleChange('anioPublicacion', e.target.value)} />
+                        <input 
+                        id="anioPublicacion" 
+                        type="number" 
+                        min="1"
+                        value={editingBook.anioPublicacion} onChange={(e) => handleChange('anioPublicacion', e.target.value)} />
                     </div>
 
                     <div className="form-group">
