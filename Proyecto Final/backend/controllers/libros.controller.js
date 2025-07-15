@@ -14,6 +14,11 @@ class LibrosController {
       ) {
         throw new CustomError("Faltan datos obligatorios", 400);
       }
+
+      if(libro.anioPublicacion <= 0) {
+        throw new CustomError("El año de publicación debe ser un número positivo", 400);
+      }
+
       const nuevoLibro = await libroService.createLibro(libro);
       res.status(201).json(nuevoLibro);
     } catch (error) {
