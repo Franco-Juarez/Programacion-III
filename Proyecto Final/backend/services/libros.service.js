@@ -36,6 +36,18 @@ class LibroService {
     const libroActualizado = await libroExistente.update(datosActualizados);
     return libroActualizado;
   }
+
+  async getAllGeneros() {
+    const generos = await Libro.findAll({
+      attributes: ["genero"],
+      group: ["genero"],
+      order: [["genero", "ASC"]],
+    });
+
+    return generos.map(genero => genero.genero);
+  }
 }
+
+
 
 module.exports = new LibroService();
