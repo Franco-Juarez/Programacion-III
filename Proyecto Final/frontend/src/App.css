@@ -35,6 +35,14 @@ button {
   line-height: 1;
 }
 
+.header-link h1 {
+  transition: transform 0.3s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.header-link h1:hover {
+  transform: scale(1.02);
+}
+
 .header p {
   color: var(--grey);
 }
