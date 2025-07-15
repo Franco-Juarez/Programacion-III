@@ -18,6 +18,7 @@ const ReviewModal = ({ libroId, reviewModal, onClose }) => {
                 console.error("Error del backend:", errorData);
                 throw new Error(errorData.message || "Error al enviar el comentario");
             }
+            alert("Reseña guardada correctamente");
             setComentario("");
             onClose();
         } catch (err) {
@@ -43,6 +44,7 @@ const ReviewModal = ({ libroId, reviewModal, onClose }) => {
                         value={comentario}
                         onChange={(e) => setComentario(e.target.value)}
                         required
+                        maxLength={200}
                         rows={4}
                     />
                     <button type="submit" disabled={loading}>

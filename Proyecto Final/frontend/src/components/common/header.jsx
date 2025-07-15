@@ -48,13 +48,13 @@ const Header = ({ booksCount, setRefreshBooks }) => {
             if (!response.ok) {
                 throw new Error('Error al agregar el libro');
             }
+            alert("¡Libro agregado exitosamente!");
             setRefreshBooks(prev => !prev);
         } catch (error) {
             console.error(error)
         }
         cleanFields();
         setShowForm(false);
-        console.log('Libro agregado:', newBook);
     };
 
     const handleShowForm = () => {
@@ -93,7 +93,6 @@ const Header = ({ booksCount, setRefreshBooks }) => {
                         X
                     </button>
                     <form onSubmit={handleSubmit}>
-                        {/* Agregar un libro */}
                         <h2>Agregar un libro</h2>
                         <label htmlFor="search">Título</label>
                         <input
@@ -102,6 +101,7 @@ const Header = ({ booksCount, setRefreshBooks }) => {
                             id="title"
                             name="title"
                             placeholder="Agregar libro"
+                            required
                         />
                         <label htmlFor="author">Autor:</label>
                         <input
@@ -124,11 +124,17 @@ const Header = ({ booksCount, setRefreshBooks }) => {
                         <label htmlFor="genre">Género:</label>
                         <input
                             onChange={(e) => setGenre(e.target.value)}
-                            type="text" id="genre" name="genre" placeholder="Fantasía" />
+                            type="text" 
+                            id="genre" 
+                            name="genre" 
+                            placeholder="Fantasía" 
+                            required
+                            />
                         <label htmlFor="status">Estado:</label>
                         <select
                             id="status"
                             name="status"
+                            required
                             onChange={(e) => setStatus(e.target.value)}
                         >
                             <option value="unread">No leído</option>

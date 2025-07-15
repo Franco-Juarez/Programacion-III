@@ -22,7 +22,7 @@ function App() {
     const response = await fetch(`http://localhost:3001/api/libros/generos`);
     if (!response.ok) {
       console.error("Error al obtener libros filtrados");
-      return;
+      alert('Error al obtener los libros filtrados');
     }
     const data = await response.json();
     setGenresList(data);
@@ -32,7 +32,7 @@ function App() {
     const response = await fetch("http://localhost:3001/api/libros");
     if (!response.ok) {
       console.error("Error al obtener libros");
-      return;
+      alert('Error al obtener los libros');
     }
     const data = await response.json();
     setBooks(data);

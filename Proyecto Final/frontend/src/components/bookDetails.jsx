@@ -27,10 +27,10 @@ export const BookDetails = () => {
           const data = await response.json();
           console.log(data)
           setComments(data)
-          console.log(comments)
         }
       } catch (error) {
         console.error(error)
+        alert("Error al obtener los comentarios")
       }
     }
     fetchComment();
